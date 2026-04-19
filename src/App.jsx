@@ -1,7 +1,8 @@
+import { Home } from './pages/pages';
 
 const App = () => {
   return(
-    <div className="border-b border-red-500">App</div>
+    <Home />
   );
 };
 
