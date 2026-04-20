@@ -1,17 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap');
+@import 'tailwindcss';
 
 @font-face {
-  font-family: "ProximaNova, sans-serif";
-  src: url("./assets/fonts/ProximaNova-Regular.otf");
+  font-family: 'ProximaNova, sans-serif';
+  src: url('./assets/fonts/ProximaNova-Regular.otf');
 }
 
+@theme {
+  --color-midnight-navy: #1C2B3A; /* dark-brown: #523122 */
+  --color-golden-sun: #F2A735; /* mid-brown: #A26833 */
+  --color-honey-gold: #D4A96A; /* light-brown: #E3A458 */
+  --color-warm-cream: #F7F0E6; /* milk: #FAEADE */
+  --color-near-black: #1A1A1A; /* black(stork-dark): #222123 */
+  /* --color-main-bg: #232224; */
+  /* --color-white: #ffffff; */
+  /* --color-red-brown: #7f3b2d; */
+  /* --color-yellow-brown: #a26833; */
+  /* --color-milk-yellow: #e3d3bc; */
+  /* --color-red: #a02128; */
+  --font-sans: "Antonio", sans-serif;
+  --font-paragraph: "ProximaNova, sans-serif";
+}
 html, 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #faeade;
+  background-color: #F7F0E6;
+  color: #1C2B3A;
   font-family: "Antonio", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -21,4 +38,19 @@ body {
 
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .general-title {
+    @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-0.35vw];
+  }
 }
