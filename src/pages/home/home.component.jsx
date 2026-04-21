@@ -1,12 +1,17 @@
-import { Navbar, HeroSection } from '../../components/layout/layout';
+import {
+  Navbar,
+  HeroSection,
+  MessageSection,
+} from '../../components/layout/layout';
 
 const Home = () => {
-  return(
+  return (
     <main>
       <Navbar />
       <HeroSection />
+      <MessageSection />
       <div className="h-dvh border border-red-500"></div>
     </main>
-  )
-}
+  );
+};
 export default Home;
