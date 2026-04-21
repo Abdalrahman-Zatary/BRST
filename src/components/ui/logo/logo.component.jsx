@@ -21,8 +21,8 @@ const Logo = () => {
         y="50"
         text-anchor="middle"
         dominant-baseline="auto"
-        fill="#F7F0E6"
-        stroke="#F7F0E6"
+        fill="#FFF4E0"
+        stroke="#FFF4E0"
         stroke-width="7"
         paint-order="stroke"
         mask="url(#brst-outline-mask)">BRST</text>
@@ -34,7 +34,7 @@ const Logo = () => {
         y="50"
         text-anchor="middle"
         dominant-baseline="auto"
-        fill="#1C2B3A">BRST</text>
+        fill="#0D1F2D">BRST</text>
 
       <text
         font-family="Pacifico, cursive"
@@ -44,7 +44,7 @@ const Logo = () => {
         text-anchor="middle"
         dominant-baseline="auto"
         fill="none"
-        stroke="#F7F0E6"
+        stroke="#FFF4E0"
         stroke-width="1.2"
         opacity="0.45">BRST</text>
     </svg>
