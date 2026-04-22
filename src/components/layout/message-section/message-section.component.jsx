@@ -17,7 +17,7 @@ const MessageSection = () => {
             </h1>
           </div>
 
-          <div className="flex-center text-sm md:mt-12 mt-10">
+          <div className="flex-center text-sm md:mt-14 mt-10">
             <div className="max-w-md px-16 flex-center overflow-hidden">
               <p>
                 Fuel the adventure. Feed the momentum. BRST is where real fruit

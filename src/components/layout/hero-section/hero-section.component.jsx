@@ -20,11 +20,11 @@ const HeroSection = () => {
       .to(
         ".hero-text-scroll",
         {
-          duration: 1,
+          duration: 1.2,
           clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
           ease: "circ.out",
         },
-        "-=0.5",
+        "-=0.3",
       )
       .from(
         titleSpilt.chars,
