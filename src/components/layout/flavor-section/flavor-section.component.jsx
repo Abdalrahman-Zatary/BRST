@@ -69,21 +69,20 @@ const FlavorSection = () => {
 
   return (
     <section className="flavor-section pt-16">
-      {/* lg:h-dvh */}
       <div className="relative flex lg:flex-row flex-col w-full slider-elements-container">
-        {/* lg:w-[57%] lg:h-full lg:flex-none flex items-center justify-center lg:py-0 py-16 */}
+
         <div className="lg:w-[57%] lg:h-full lg:flex-none flex items-center justify-center mt-10">
           <FlavorTitle />
         </div>
-        {/* overflow-hidden */}
+
         <div className="lg:h-full">
           <FlavorSlider />
         </div>
       </div>
-      {/* absolute left-0 w-full bg-transparent */}
-      <div className="cta-wrapper absolute h-32 w-full flex justify-center items-center lg:bg-transparent bg-warm-sunrise">
-        <a className="cta-btn text-deep-navy bg-mango-burst uppercase font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer">
-          Chug a SPYLT
+
+      <div className="cta-wrapper">
+        <a className="cta-btn">
+          Git it now
         </a>
       </div>
     </section>

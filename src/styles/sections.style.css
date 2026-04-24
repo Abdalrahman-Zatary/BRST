@@ -2,7 +2,7 @@
   .paragraph-line {
     @apply text-nowrap overflow-hidden;
   }
-
+  /* HeroSection */
   .hero-container {
     @apply relative bg-warm-sunrise w-screen h-dvh overflow-hidden;
 
@@ -34,7 +34,7 @@
       }
     }
   }
-
+  /* MessageSection */
   .message-content {
     @apply relative z-20 bg-dark-ember text-warm-sunrise min-h-dvh overflow-hidden flex justify-center items-center;
 
@@ -63,7 +63,7 @@
       @apply rotate-3 xl:-translate-y-10 lg:translate-y-0 md:-translate-y-8 sm:-translate-y-5 -translate-y-10  absolute z-10 border-[0.5vw] border-dark-ember;
     }
   }
-
+  /* FlaverSection and Components:{ FlavorTitle, FlavorSlider } */
   .flavor-section {
     @apply relative bg-warm-sunrise;
     
@@ -97,6 +97,14 @@
           @apply absolute lg:bottom-7 sm:bottom-4 bottom-2 lg:left-8 sm:left-6 left-2 text-warm-sunrise lg:text-5xl sm:text-3xl text-2xl font-semibold uppercase tracking-tighter; 
         }
       }
+    }
+  }
+
+  .cta-wrapper {
+    @apply absolute h-32 w-full flex justify-center items-center lg:bg-transparent bg-warm-sunrise;
+
+    .cta-btn {
+      @apply text-deep-navy bg-mango-burst uppercase font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
     }
   }
 }
