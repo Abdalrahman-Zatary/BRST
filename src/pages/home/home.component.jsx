@@ -7,6 +7,7 @@ import {
   MessageSection,
   FlavorSection,
 } from '../../components/layout/layout';
+import NutritionSection from '../../components/layout/nutrition-section/nutrition-section.component';
 
 const Home = () => {
   useGSAP(() => {
@@ -28,7 +29,8 @@ const Home = () => {
           <HeroSection />
           <MessageSection />
           <FlavorSection />
-          <div className="h-dvh border border-red-500"></div>
+          <NutritionSection />
+          {/* <div className="h-dvh border border-red-500"></div> */}
         </div>
       </div>
     </main>
