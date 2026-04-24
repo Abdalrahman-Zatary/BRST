@@ -76,7 +76,7 @@ const NutritionSection = () => {
       <div className="absolute w-full top-1/4 flex sm:flex-row flex-col justify-between md:px-8 px-5">
         <div className="general-title relative flex flex-col justify-center items-center gap-24">
           <div className="overflow-hidden place-self-start">
-            <h1 className="nutrition-title">It still dose</h1>
+            <h1 className="nutrition-title">It really does</h1>
           </div>
           <div
             style={{
@@ -85,7 +85,7 @@ const NutritionSection = () => {
             className="nutrition-text-scroll place-self-start"
           >
             <div className="bg-flame-gold xl:pb-5 md:pb-6 sm:pb-3 pb-4 lg:pt-1 sm:pt-2 pt-3 xl:px-5 px-3">
-              <h2 className="text-warm-sunrise">Body Good</h2>
+              <h2 className="text-warm-sunrise">Body Right</h2>
             </div>
           </div>
         </div>
@@ -93,8 +93,8 @@ const NutritionSection = () => {
         <div className="flex sm:justify-center items-center sm:mt-0 mt-3">
           <div className="md:max-w-75 max-w-xs">
             <p className="text-sm sm:text-right text-balance font-paragraph">
-              Milk contains a wide array of nutrients, including vitamins,
-              minerals, and protein, and this is lactose free.
+              Juice contains a powerful array of nutrients, including vitamins,
+              minerals, and antioxidants, and this is 100% natural.
             </p>
           </div>
         </div>
