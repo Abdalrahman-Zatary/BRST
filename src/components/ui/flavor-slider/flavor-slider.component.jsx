@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-import { flavorLists } from '../../../utils/constants/flavorData';
+import { flavorLists } from '../../../utils/constants/flavores.Data';
 
 const FlavorSlider = () => {
   const sliderRef = useRef();
