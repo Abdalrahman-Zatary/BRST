@@ -1,11 +1,11 @@
 import { Home } from './pages/pages';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger, ScrollSmoother, SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 const App = () => {
-  return(
+  return (
     <Home />
   );
 };

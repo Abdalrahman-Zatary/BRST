@@ -1,3 +1,6 @@
+import { useGSAP } from '@gsap/react';
+import { ScrollSmoother } from 'gsap/all';
+
 import {
   Navbar,
   HeroSection,
@@ -6,13 +9,28 @@ import {
 } from '../../components/layout/layout';
 
 const Home = () => {
+  useGSAP(() => {
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1,
+      effects: true,
+      normalizeScroll: true,
+      ignoreMobileResize: true,
+    });
+  });
+
   return (
     <main>
       <Navbar />
-      <HeroSection />
-      <MessageSection />
-      <FlavorSection />
-      <div className="h-dvh border border-red-500"></div>
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <HeroSection />
+          <MessageSection />
+          <FlavorSection />
+          <div className="h-dvh border border-red-500"></div>
+        </div>
+      </div>
     </main>
   );
 };
