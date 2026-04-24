@@ -21,7 +21,7 @@ const FlavorSlider = () => {
         scrollTrigger: {
           trigger: ".flavor-section",
           start: "top top",
-          end: `+=${scrollAmount + 1500}px`,
+          end: `+=${scrollAmount}px`,
           scrub: 1,
           pin: true,
           anticipatePin: 1,
@@ -30,7 +30,7 @@ const FlavorSlider = () => {
       });
   
       tl.to(".slider-elements-container", {
-        x: `-${scrollAmount + 1500}px`,
+        x: `-${scrollAmount + 2000}px`,
         ease: "none",
       });
     }
