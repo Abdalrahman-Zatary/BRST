@@ -42,7 +42,7 @@ const FlavorTitle = () => {
   });
 
   return (
-    <div className="general-title col-center h-full 2xl:gap-32 xl:gap-24 gap-16">
+    <div className="general-title col-center h-full 2xl:gap-28 xl:gap-20 sm:gap-26 gap-10">
       <div className="overflow-hidden 2xl:py-0 py-3 first-text-split">
         <h1>We here 6</h1>
       </div>
@@ -53,7 +53,7 @@ const FlavorTitle = () => {
         }}
         className="flavor-text-scroll"
       >
-        <div className="bg-golden-mango pb-5 2xl:pt-0 pt-3 2xl:px-5 px-3">
+        <div className="bg-golden-mango xl:pb-5 sm:pb-6 pb-4 lg:pt-1 sm:pt-3 pt-2 xl:px-5 px-3">
           <h2 className="text-warm-sunrise">freaking</h2>
         </div>
       </div>
