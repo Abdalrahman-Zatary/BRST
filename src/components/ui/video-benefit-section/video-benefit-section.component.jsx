@@ -11,17 +11,16 @@ const VideoBenefitSection = () => {
     if (!isMobile) {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "vd-benefit-section",
+          trigger: ".vd-benefit-section",
           start: "-15% top",
           end: "200% top",
           scrub: 1.5,
           pin: true,
-          markers: true,
         },
       });
 
       tl.to(".video-box", {
-        clipPath: "circle(100% at 50% 50%);",
+        clipPath: "circle(100% at 50% 50%)",
         ease: "power1.inOut",
       });
     }
@@ -38,7 +37,7 @@ const VideoBenefitSection = () => {
         className="size-full video-box"
       >
         <video
-          src="/src/assets/videos/pin-video.mp4"
+          src="/src/assets/videos/benefit-section.mp4"
           playsInline
           muted
           loop
@@ -49,12 +48,12 @@ const VideoBenefitSection = () => {
           <img
             src="/src/assets/icons/circle-text.svg"
             alt="video"
-            className="spin-circle"
+            className="spin-circle size-[15vw]"
           />
           <div className="play-btn">
             <img
               src="/src/assets/icons/play.svg"
-              alt="play"
+              alt=""
               className="size-[3vw] ml-[0.5vw]"
             />
           </div>

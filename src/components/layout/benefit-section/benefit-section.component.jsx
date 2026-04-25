@@ -1,10 +1,19 @@
 import { useGSAP } from '@gsap/react';
+import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
+import VideoBenefitSection from '../../ui/video-benefit-section/video-benefit-section.component';
 import ClipPathTitle from '../../ui/clipPath-title/clipPat-title.component';
 
 const BenefitSection = () => {
   useGSAP(() => {
+    const firstTextSplit = SplitText.create(".first-paragraph", {
+      type: "words, lines",
+      linesClass: "paragraph-line",
+    });
+    const secondTextSplit = SplitText.create(".second-paragraph", {
+      type: "words",
+    });
     const revealTl = gsap.timeline({
       delay: 1,
       scrollTrigger: {
@@ -12,8 +21,40 @@ const BenefitSection = () => {
         start: "top 60%",
         end: "top top",
         scrub: 1.5,
+      },
+    });
+
+    const firstTextTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".first-paragraph",
+        start: "top bottom",
+        end: "bottom 85%",
+        scrub: true,
+      },
+    });
+    firstTextTl.from(firstTextSplit.words, {
+      duration: 1,
+      yPercent: 300,
+      rotate: 3,
+      ease: "power1.inOut",
+      stagger: 0.05,
+    });
+
+    const secondTextTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".second-paragraph",
+        start: "top bottom",
+        end: "bottom 85%",
+        scrub: true,
         markers: true,
       },
+    });
+    secondTextTl.from(secondTextSplit.words, {
+      duration: 1,
+      yPercent: 300,
+      rotate: 180,
+      ease: "power1.inOut",
+      stagger: 0.1,
     });
 
     revealTl
@@ -44,10 +85,10 @@ const BenefitSection = () => {
   });
 
   return (
-    <div className="benefit-section">
+    <section className="benefit-section">
       <div className="container mx-auto pt-20">
         <div className="col-center">
-          <p>
+          <p className="first-paragraph">
             Unlock the Advantages: <br />
             Explore the Key Benefits of Choosing BRST
           </p>
@@ -84,11 +125,15 @@ const BenefitSection = () => {
           </div>
 
           <div className="md:mt-0 mt-10">
-            <p>And much more...</p>
+            <p className="second-paragraph">And much more...</p>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="relative">
+        <VideoBenefitSection />
+      </div>
+    </section>
   );
 }
 export default BenefitSection;
