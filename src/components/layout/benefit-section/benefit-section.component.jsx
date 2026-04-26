@@ -46,13 +46,12 @@ const BenefitSection = () => {
         start: "top bottom",
         end: "bottom 85%",
         scrub: true,
-        markers: true,
       },
     });
     secondTextTl.from(secondTextSplit.words, {
       duration: 1,
       yPercent: 300,
-      rotate: 180,
+      rotate: 12,
       ease: "power1.inOut",
       stagger: 0.1,
     });

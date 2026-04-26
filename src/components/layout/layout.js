@@ -4,6 +4,7 @@ import MessageSection from './message-section/message-section.component';
 import FlavorSection from './flavor-section/flavor-section.component';
 import NutritionSection from './nutrition-section/nutrition-section.component';
 import BenefitSection from './benefit-section/benefit-section.component';
+import TestimonialSection from './testimonial-section/testimonial-section.conponent';
 
 export {
   Navbar,
@@ -12,4 +13,5 @@ export {
   FlavorSection,
   NutritionSection,
   BenefitSection,
+  TestimonialSection,
 };

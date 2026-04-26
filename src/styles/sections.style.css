@@ -138,7 +138,7 @@
       }
     }
   }
-  /* BenefitSection */
+  /* BenefitSection and Components: { } */
   .benefit-section {
     @apply min-h-dvh bg-near-black overflow-hidden relative;
 
@@ -172,6 +172,22 @@
       .play-btn {
         @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
       }
+    }
+  }
+  /* TestimonialSection */
+  .testimonials-section {
+    @apply bg-warm-sunrise relative w-full h-[120dvh];
+
+    .pin-box {
+      @apply flex items-center justify-center w-full ps-52 absolute xl:bottom-32 bottom-[50vh];
+
+      .vd-card {
+        @apply  w-72 h-125 flex-none md:rounded-[2vw] rounded-3xl -ms-36 overflow-hidden xl:relative absolute border-[0.5vw] border-warm-sunrise;
+      }
+    }
+
+    h1 {
+      @apply uppercase text-[20.5vw] leading-[105%] tracking-[-0.4vw] ml-[2vw] font-bold;
     }
   }
 }
