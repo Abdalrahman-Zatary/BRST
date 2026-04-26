@@ -190,4 +190,20 @@
       @apply uppercase text-[20.5vw] leading-[105%] tracking-[-0.4vw] ml-[2vw] font-bold;
     }
   }
+  /* LocationSection */
+  .location-section {
+    @apply min-h-dvh relative overflow-hidden bg-near-black;
+
+    .location-container {
+      @apply relative mt-6 mb-20 md:h-full sm:h-125 h-105 overflow-hidden;
+
+      .location-content {
+        @apply absolute left-0 top-0 bottom-0 z-10 flex flex-col justify-center lg:gap-10 md:gap-6 gap-12 md:pl-20 pl-10;
+
+        .btn-location {
+          @apply bg-near-black text-warm-sunrise uppercase mr-auto font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
+        }
+      }
+    }
+  }
 }

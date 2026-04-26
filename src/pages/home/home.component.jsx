@@ -9,6 +9,7 @@ import {
   NutritionSection,
   BenefitSection,
   TestimonialSection,
+  LocationSection,
 } from '../../components/layout/layout';
 
 const Home = () => {
@@ -36,7 +37,7 @@ const Home = () => {
             <BenefitSection />
             <TestimonialSection />
           </div>
-          {/* <div className="h-dvh border border-red-500"></div> */}
+          <LocationSection />
         </div>
       </div>
     </main>
