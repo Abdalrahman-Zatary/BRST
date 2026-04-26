@@ -163,7 +163,7 @@
     }
 
     .vd-benefit-section {
-      @apply md:h-[110vh] h-dvh overflow-hidden md:-translate-y-[15%]! md:mt-0 mt-20;
+      @apply md:h-[110vh] h-dvh overflow-hidden lg:-translate-y-[15%]! md:-translate-y-[33%]! translate-y-0! lg:mt-0 md:mt-48 mt-10;
 
       video {
         @apply size-full absolute inset-0 object-cover;
@@ -179,10 +179,10 @@
     @apply bg-warm-sunrise relative w-full h-[120dvh];
 
     .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute xl:bottom-32 bottom-[50vh];
+      @apply flex items-center justify-center w-full ps-52 absolute xl:bottom-32 lg:bottom-[55vh] sm:bottom-[62vh] bottom-[55vh];
 
       .vd-card {
-        @apply  w-72 h-125 flex-none md:rounded-[2vw] rounded-3xl -ms-36 overflow-hidden xl:relative absolute border-[0.5vw] border-warm-sunrise;
+        @apply xl:w-72 sm:w-80 w-64 xl:h-125 h-fit flex-none md:rounded-[2vw] rounded-3xl sm:-ms-36 -ms-46 overflow-hidden xl:relative absolute border-[0.5vw] border-warm-sunrise;
       }
     }
 
