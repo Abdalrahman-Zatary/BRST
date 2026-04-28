@@ -82,7 +82,7 @@ const HeroSection = () => {
           </h2>
 
           <div className="hero-button">
-            <a>Chug a SPYLT</a>
+            <a>Chug a BRST</a>
           </div>
         </div>
       </div>

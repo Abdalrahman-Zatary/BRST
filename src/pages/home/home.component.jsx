@@ -10,6 +10,7 @@ import {
   BenefitSection,
   TestimonialSection,
   LocationSection,
+  Footer,
 } from '../../components/layout/layout';
 
 const Home = () => {
@@ -38,6 +39,7 @@ const Home = () => {
             <TestimonialSection />
           </div>
           <LocationSection />
+          <Footer />
         </div>
       </div>
     </main>

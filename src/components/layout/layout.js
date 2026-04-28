@@ -6,6 +6,7 @@ import NutritionSection from './nutrition-section/nutrition-section.component';
 import BenefitSection from './benefit-section/benefit-section.component';
 import TestimonialSection from './testimonial-section/testimonial-section.conponent';
 import LocationSection from './location-section/location-section.component';
+import Footer from './footer/footer.component';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   BenefitSection,
   TestimonialSection,
   LocationSection,
+  Footer,
 };

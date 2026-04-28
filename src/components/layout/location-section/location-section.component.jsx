@@ -52,7 +52,7 @@ const LocationSection = () => {
       <img
         src="/src/assets/images/location-dip.svg"
         alt="dip"
-        className="w-full object-cover -translate-y-1"
+        className="w-full object-cover"
       />
       <div className="location-container">
         <img

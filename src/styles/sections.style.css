@@ -195,7 +195,7 @@
     @apply min-h-dvh relative overflow-hidden bg-near-black;
 
     .location-container {
-      @apply relative mt-6 mb-20 md:h-full sm:h-125 h-105 overflow-hidden;
+      @apply relative mt-6 md:h-full sm:h-125 h-105 overflow-hidden;
 
       .location-content {
         @apply absolute left-0 top-0 bottom-0 z-10 flex flex-col justify-center lg:gap-10 md:gap-6 gap-12 md:pl-20 pl-10;
@@ -203,6 +203,26 @@
         .btn-location {
           @apply bg-near-black text-warm-sunrise uppercase mr-auto font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
         }
+      }
+    }
+  }
+  /* Footer */
+  .footer {
+    @apply min-h-dvh overflow-hidden relative bg-near-black;
+
+    .social-btn {
+      @apply border-[1.5px] border-warm-sunrise/30 md:size-[5vw] size-12 md:p-0 p-3 flex justify-center items-center rounded-full hover:bg-[#FFFFFF1A] transition-colors cursor-pointer;
+    }
+
+    input {
+      @apply 2xl:text-3xl text-[27px] placeholder:font-bold placeholder:tracking-tighter outline-none;
+    }
+
+    .copyright-box {
+      @apply 2xl:absolute w-full md:px-7 px-5 py-7 bottom-0 text-warm-sunrise opacity-50 md:text-lg font-paragraph flex gap-7 md:flex-row flex-col-reverse md:justify-between justify-center items-start;
+
+      p {
+        @apply text-center text-sm;
       }
     }
   }
