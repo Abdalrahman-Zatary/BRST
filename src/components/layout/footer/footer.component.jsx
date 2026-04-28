@@ -1,8 +1,30 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/all';
 import { useMediaQuery } from 'react-responsive';
 
 const Footer = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 767px)",
+  });
+
+  useGSAP(() => {
+    const titleSpilt = SplitText.create(".footer h1", {
+      type: "chars",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top center",
+      },
+    });
+
+    tl.from(titleSpilt.chars, {
+      yPercent: 200,
+      stagger: 0.02,
+      ease: "power1.out",
+    });
   });
 
   return (
