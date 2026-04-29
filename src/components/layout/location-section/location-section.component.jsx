@@ -50,13 +50,13 @@ const LocationSection = () => {
   return (
     <section className="location-section">
       <img
-        src="/src/assets/images/location-dip.svg"
+        src="https://i.ibb.co/cm31PH9/location-dip.webp"
         alt="dip"
         className="w-full object-cover"
       />
       <div className="location-container">
         <img
-          src="/src/assets/images/location-section.svg"
+          src="https://i.ibb.co/9960z1gY/location-section.webp"
           alt="location"
           className="md:relative absolute inset-0 w-full h-full object-cover"
         />
@@ -66,11 +66,9 @@ const LocationSection = () => {
               <h1 className="location-title text-warm-sunrise">Right around</h1>
             </div>
             <div
-              style={
-                {
-                  clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
-                }
-              }
+              style={{
+                clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+              }}
               className="location-text-scroll rotate-3 -mt-1 text-nowrap opacity-0"
             >
               <div className="bg-mango-burst lg:pt-0 pt-2 lg:pb-2 pb-4 px-3">

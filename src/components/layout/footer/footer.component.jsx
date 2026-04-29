@@ -38,13 +38,13 @@ const Footer = () => {
 
         {isMobile ? (
           <img
-            src="/src/assets/images/footer-section-mobile.webp"
+            src="https://i.ibb.co/4wqH6NCC/footer-section-mobile.webp"
             alt="splach"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain mix-blend-lighten"
           />
         ) : (
           <video
-            src="/src/assets/videos/footer-section.mp4"
+            src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475124/BRST-footer-section.mp4"
             autoPlay
             playsInline
             muted

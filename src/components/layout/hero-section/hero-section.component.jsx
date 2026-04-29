@@ -82,7 +82,7 @@ const HeroSection = () => {
           </>
         ) : (
           <video
-            src="/src/assets/videos/hero-section.mp4"
+            src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475162/BRST-hero-section.mp4"
             autoPlay
             muted
             playsInline

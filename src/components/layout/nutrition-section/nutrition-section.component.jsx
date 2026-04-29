@@ -64,12 +64,12 @@ const NutritionSection = () => {
   return (
     <section className="nutrition-section">
       <img
-        src="/src/assets/images/nutrition-dip.svg"
+        src="https://i.ibb.co/bg4PVKD5/nutrition-dip.webp"
         alt="nutrition-dip"
         className="w-full object-cover"
       />
       <img
-        src="/src/assets/images/nutrition-section.webp"
+        src="https://i.ibb.co/ycq4trJ7/nutrition-section.webp"
         alt="Coconut-cloud"
         className="nutrition-img"
       />

@@ -37,7 +37,7 @@ const VideoBenefitSection = () => {
         className="size-full video-box"
       >
         <video
-          src="/src/assets/videos/benefit-section.mp4"
+          src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475117/benefit-section_os67dt.mp4"
           playsInline
           muted
           loop
