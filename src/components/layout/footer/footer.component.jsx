@@ -38,7 +38,7 @@ const Footer = () => {
 
         {isMobile ? (
           <img
-            src="/src/assets/images/footer-section-mobile.png"
+            src="/src/assets/images/footer-section-mobile.webp"
             alt="splach"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain mix-blend-lighten"
           />

@@ -69,7 +69,7 @@ const NutritionSection = () => {
         className="w-full object-cover"
       />
       <img
-        src="/src/assets/images/nutrition-section.png"
+        src="/src/assets/images/nutrition-section.webp"
         alt="Coconut-cloud"
         className="nutrition-img"
       />
