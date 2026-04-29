@@ -10,7 +10,7 @@
       @apply absolute w-full top-1/2 left-1/2 -translate-x-1/2 translate-y-0 z-10 flex flex-col items-center;
 
       .hero-title {
-        @apply text-deep-navy 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold uppercase leading-[9vw] tracking-[-0.35vw];
+        @apply text-deep-navy 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] lg:py-0 md:py-5 sm:py-0 py-3 font-bold uppercase leading-[9vw] tracking-[-0.35vw];
       }
 
       .hero-text-scroll {
@@ -21,7 +21,7 @@
         }
 
         h1 {
-          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] text-[#fce1cd] leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
+          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] text-warm-sunrise leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
         }
       }
 
@@ -30,7 +30,7 @@
       }
 
       .hero-button {
-        @apply md:mt-11 mt-10 text-deep-navy bg-mango-burst uppercase font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
+        @apply md:mt-11 mt-10 text-deep-navy bg-mango-burst uppercase font-bold sm:text-sm text-xs rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
       }
     }
   }

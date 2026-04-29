@@ -1,15 +1,24 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
+import { useMediaQuery } from 'react-responsive';
 
 const HeroSection = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  });
+
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1023px)",
+  });
+
   useGSAP(() => {
     const titleSpilt = SplitText.create(".hero-title", {
       type: "chars",
     });
 
     const tl = gsap.timeline({
-      delay: 1,
+      delay: isTablet ? 1 : 4,
     });
 
     tl.to(".hero-content", {
@@ -54,13 +63,32 @@ const HeroSection = () => {
   });
 
   return (
-    <section className="bg-deep-navy">
+    <section className="bg-near-black">
       <div className="hero-container">
-        <img
-          src="/src/assets/images/static-img.png"
-          alt="hero-image"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 object-center md:scale-150 scale-100"
-        />
+        {isTablet ? (
+          <>
+            {isMobile && (
+              <img
+                src="/src/assets/images/mobile-hero-section.png"
+                alt="flavors BRST"
+                className="absolute bottom-30 size-full object-cover"
+              />
+            )}
+            <img
+              src="/src/assets/images/hero-img.png"
+              alt="flavors BRST"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain"
+            />
+          </>
+        ) : (
+          <video
+            src="/src/assets/videos/hero-section.mp4"
+            autoPlay
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
             <h1 className="hero-title">Freaking Delicious</h1>
@@ -71,7 +99,7 @@ const HeroSection = () => {
             }}
             className="hero-text-scroll"
           >
-            <div className="hero-subtitle">
+            <div className="hero-subtitle lg:py-0 md:py-3 sm:py-0 py-2">
               <h1>Vitamins + Energy</h1>
             </div>
           </div>

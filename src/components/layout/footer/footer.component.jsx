@@ -48,7 +48,7 @@ const Footer = () => {
             autoPlay
             playsInline
             muted
-            className="absolute lg:top-0 bottom-0 object-contain mix-blend-lighten"
+            className="absolute bottom-0 object-contain mix-blend-lighten"
           />
         )}
 
