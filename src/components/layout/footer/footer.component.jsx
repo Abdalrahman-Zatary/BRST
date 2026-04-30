@@ -56,21 +56,21 @@ const Footer = () => {
           <div className="social-btn">
             <img
               className="size-6"
-              src="/src/assets/icons/yt.svg"
+              src="https://i.ibb.co/pvXgPLhJ/yt.webp"
               alt="youtub"
             />
           </div>
           <div className="social-btn">
             <img
               className="size-6"
-              src="/src/assets/icons/insta.svg"
+              src="https://i.ibb.co/NnWHPw3x/insta.webp"
               alt="instagram"
             />
           </div>
           <div className="social-btn">
             <img
               className="size-6"
-              src="/src/assets/icons/tiktok.svg"
+              src="https://i.ibb.co/KpRT4sy5/tiktok.webp"
               alt="tiktok"
             />
           </div>
@@ -106,7 +106,7 @@ const Footer = () => {
               />
               <img
                 className="cursor-pointer"
-                src="/src/assets/icons/arrow.svg"
+                src="https://i.ibb.co/XkxRhLjq/arrow.webp"
                 alt="arrow"
               />
             </div>

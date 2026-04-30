@@ -46,14 +46,14 @@ const VideoBenefitSection = () => {
 
         <div className="absolute-center md:scale-100 scale-200">
           <img
-            src="/src/assets/icons/circle-text.svg"
+            src="https://i.ibb.co/sJ9MTk3s/circle-text.webp"
             alt="video"
             className="spin-circle size-[15vw]"
           />
           <div className="play-btn">
             <img
-              src="/src/assets/icons/play.svg"
-              alt=""
+              src="https://i.ibb.co/Yqh6BNL/play.webp"
+              alt="play"
               className="size-[3vw] ml-[0.5vw]"
             />
           </div>
