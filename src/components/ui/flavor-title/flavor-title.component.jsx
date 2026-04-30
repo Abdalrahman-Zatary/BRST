@@ -2,6 +2,8 @@ import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
+import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+
 const FlavorTitle = () => {
   useGSAP(() => {
     const firstTextSplit = SplitText.create(".first-text-split h1", {
@@ -11,33 +13,39 @@ const FlavorTitle = () => {
       type: "chars",
     });
 
-    gsap.from(firstTextSplit.chars, {
+    const titleTl_1 = gsap.timeline({
+      paused: true,
+    });    
+    const titleTl_2 = gsap.timeline({
+      paused: true,
+    });    
+    const titleTl_3 = gsap.timeline({
+      paused: true,
+    });
+    
+    titleTl_1.from(firstTextSplit.chars, {
       yPercent: 200,
       stagger: 0.02,
       ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        start: "top 30%",
-      },
     });
-
-    gsap.to(".flavor-text-scroll", {
-      duration: 1,
+    titleTl_2.to(".flavor-text-scroll", {
+      duration: 0.8,
       clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        start: "top 10%",
-      },
     });
-
-    gsap.from(scondTextSplit.chars, {
+    titleTl_3.from(scondTextSplit.chars, {
       yPercent: 200,
       stagger: 0.02,
       ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        start: "top 1%",
-      },
+    });
+
+    replayTimelineOnEnter(titleTl_1, ".flavor-section", {
+      start: "top 45%",
+    });      
+    replayTimelineOnEnter(titleTl_2, ".flavor-section", {
+      start: "top 30%",
+    });      
+    replayTimelineOnEnter(titleTl_3, ".flavor-section", {
+      start: "top 15%",
     });
   });
 

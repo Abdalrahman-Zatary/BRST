@@ -2,6 +2,8 @@ import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
+import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+
 const MessageSection = () => {
   useGSAP(() => {
     const firstMessageSplit = SplitText.create(".first-message", {
@@ -39,22 +41,19 @@ const MessageSection = () => {
     });
 
     const revealTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".message-text-scroll",
-        start: "top 45%",
-      },
+      paused: true,
     });
     revealTl.to(".message-text-scroll", {
       duration: 1,
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       ease: "circ.inOut"
     });
+    replayTimelineOnEnter(revealTl, ".message-text-scroll", {
+      start: "bottom 68%",
+    });
 
     const paragraphTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".message-content p",
-        start: "top 60%",
-        },
+      paused: true,
     });
     paragraphTl.from(paragraphSplit.words, {
       yPercent: 300,
@@ -63,7 +62,10 @@ const MessageSection = () => {
       duration: 1,
       stagger: 0.01,
     });
-  })
+    replayTimelineOnEnter(paragraphTl, ".message-content p", {
+      start: "top 60%",
+    });
+  });
 
   return (
     <section className="message-content">

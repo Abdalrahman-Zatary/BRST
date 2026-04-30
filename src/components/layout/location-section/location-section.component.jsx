@@ -2,6 +2,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 
+import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+
 const LocationSection = () => {
   useGSAP(() => {
     const titleSplit = SplitText.create(".location-title", {
@@ -13,10 +15,10 @@ const LocationSection = () => {
     });
 
     const contentTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".location-section",
-        start: "30% center",
-      },
+      paused: true,
+    });
+    const subtitleTl = gsap.timeline({
+      paused: true,
     });
 
     contentTl
@@ -33,17 +35,18 @@ const LocationSection = () => {
         ease: "power1.inOut",
       });
 
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".location-section",
-        start: "40% center",
-      },
-    });
-    titleTl.to(".location-text-scroll", {
+    subtitleTl.to(".location-text-scroll", {
       duration: 1,
       opacity: 1,
       clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
       ease: "power1.inOut",
+    });
+
+    replayTimelineOnEnter(contentTl, ".location-section", {
+      start: "30% center",
+    });
+    replayTimelineOnEnter(subtitleTl, ".location-section", {
+      start: "45% center",
     });
   });
 

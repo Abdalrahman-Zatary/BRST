@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useMediaQuery } from 'react-responsive';
 
+import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+
 const Footer = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 767px)",
@@ -13,17 +15,18 @@ const Footer = () => {
       type: "chars",
     });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".footer",
-        start: "top center",
-      },
+    const titleTl = gsap.timeline({
+      paused: true,
     });
 
-    tl.from(titleSpilt.chars, {
+    titleTl.from(titleSpilt.chars, {
       yPercent: 200,
       stagger: 0.02,
       ease: "power1.out",
+    });
+
+    replayTimelineOnEnter(titleTl, ".footer", {
+      start: "top 55%",
     });
   });
 

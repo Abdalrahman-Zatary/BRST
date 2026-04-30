@@ -6,6 +6,7 @@ import { SplitText } from 'gsap/all';
 import gsap from 'gsap/all';
 
 import { nutrientLists } from '../../../utils/constants/brstDetailes.Data';
+import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
 
 const NutritionSection = () => {
   const isMobile = useMediaQuery({
@@ -24,12 +25,22 @@ const NutritionSection = () => {
       type: "words, lines",
       linesClass: "paragraph-line",
     });
+    const paragraphListSplit = SplitText.create(
+      ".nutrition-section .list-wrapper p",
+      {
+        type: "words, lines",
+        linesClass: "paragraph-line",
+      },
+    );
 
     const contentTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".nutrition-section",
-        start: "30% center",
-      },
+      paused: true,
+    });
+    const subtilteTl = gsap.timeline({
+      paused: true,
+    });
+    const paragraphListTl = gsap.timeline({
+      paused: true,
     });
 
     contentTl
@@ -46,18 +57,29 @@ const NutritionSection = () => {
         stagger: 0.01,
       }, "-=0.3");
 
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".nutrition-section",
-        start: "40% center",
-      },
-    });
-
-    titleTl.to(".nutrition-text-scroll", {
+    subtilteTl.to(".nutrition-text-scroll", {
       duration: 1,
       opacity: 1,
       clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
       ease: "power1.inOut",
+    });
+    
+    paragraphListTl.from(paragraphListSplit.words, {
+      yPercent: 300,
+      rotate: 3,
+      ease: "power1.inOut",
+      duration: 1,
+      stagger: 0.02,
+    });
+
+    replayTimelineOnEnter(contentTl, ".nutrition-section", {
+      start: "30% center",
+    });
+    replayTimelineOnEnter(subtilteTl, ".nutrition-section", {
+      start: "40% center",
+    });
+    replayTimelineOnEnter(paragraphListTl, ".nutrition-section", {
+      start: "50% center",
     });
   });
 
