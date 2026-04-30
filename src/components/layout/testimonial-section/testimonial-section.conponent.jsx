@@ -24,19 +24,23 @@ const TestimonialSection = () => {
         trigger: ".testimonials-section",
         start: "top bottom",
         end: "200% top",
-        scrub: true,
+        scrub: 1,
+        anticipatePin: 1,
+        fastScrollEnd: true,
       },
     });
 
     tl.to(".testimonials-section .first-title", {
       xPercent: 70,
       yPercent: -65,
+      ease: "power1.inOut",
     })
       .to(
         ".testimonials-section .second-title",
         {
           xPercent: 25,
           yPercent: -65,
+          ease: "power1.inOut",
         },
         "<",
       )
@@ -45,6 +49,7 @@ const TestimonialSection = () => {
         {
           xPercent: -50,
           yPercent: -65,
+          ease: "power1.inOut",
         },
         "<",
       );
@@ -56,6 +61,8 @@ const TestimonialSection = () => {
         end: "200% top",
         scrub: 1.5,
         pin: true,
+        anticipatePin: 1,
+        fastScrollEnd: true,
       },
     });
 
@@ -98,6 +105,7 @@ const TestimonialSection = () => {
               playsInline
               muted
               loop
+              preload="metadata"
               className="size-full object-cover"
             />
             <div className="absolute flex items-center bottom-0 w-full p-3">

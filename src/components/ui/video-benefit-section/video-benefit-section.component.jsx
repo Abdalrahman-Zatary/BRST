@@ -16,6 +16,19 @@ const VideoBenefitSection = () => {
           end: "200% top",
           scrub: 1.5,
           pin: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const intensity = Math.sin(progress * Math.PI);
+
+            const y = Math.sin(progress * 60) * 10 * intensity;
+            const x = gsap.utils.random(-3, 3) * intensity;
+
+            gsap.set(".video-box", {
+              x,
+              y,
+              rotation: x * 0.2,
+            });
+          },
         },
       });
 
