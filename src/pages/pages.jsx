@@ -1,4 +1,5 @@
 import Home from './home/home.component';
+import Menubar from './menubar/menubar.componet';
 import Shop from './shop/shop.component';
 import Stores from './stores/stores.component';
 import About from './about/about.component';
@@ -8,6 +9,7 @@ import ProductDetails from './product-details/product-details.component';
 
 export {
   Home,
+  Menubar,
   Shop,
   Stores,
   About,
