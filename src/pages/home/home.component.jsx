@@ -2,7 +2,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollSmoother } from 'gsap/all';
 
 import {
-  Navbar,
   HeroSection,
   MessageSection,
   FlavorSection,
@@ -10,8 +9,8 @@ import {
   BenefitSection,
   TestimonialSection,
   LocationSection,
-  Footer,
-} from '../../components/layout/layout';
+} from '../../sections/sections';
+import { Navbar, Footer } from '../../layout/layout';
 
 const Home = () => {
   useGSAP(() => {

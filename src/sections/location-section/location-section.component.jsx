@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 
-import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
 const LocationSection = () => {
   useGSAP(() => {

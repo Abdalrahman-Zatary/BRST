@@ -2,8 +2,8 @@ import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
-import VideoBenefitSection from '../../ui/video-benefit-section/video-benefit-section.component';
-import ClipPathTitle from '../../ui/clipPath-title/clipPat-title.component';
+import VideoBenefitSection from '../../components/ui/video-benefit-section/video-benefit-section.component';
+import ClipPathTitle from '../../components/ui/clipPath-title/clipPat-title.component';
 
 const BenefitSection = () => {
   useGSAP(() => {

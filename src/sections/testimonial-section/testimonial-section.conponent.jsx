@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery } from 'react-responsive';
 import gsap from 'gsap';
-import { cards } from '../../../utils/constants/testinonialCards.Data';
+import { cards } from '../../utils/constants/testinonialCards.Data';
 
 const TestimonialSection = () => {
   const vdRef = useRef([]);

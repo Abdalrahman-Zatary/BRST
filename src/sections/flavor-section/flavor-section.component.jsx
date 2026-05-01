@@ -1,6 +1,6 @@
-import FlavorSlider from '../../ui/flavor-slider/flavor-slider.component';
-import FlavorTitle from '../../ui/flavor-title/flavor-title.component';
-import FlavorBtn from '../../ui/flavor-btn/flavor-btn.component';
+import FlavorSlider from '../../components/ui/flavor-slider/flavor-slider.component';
+import FlavorTitle from '../../components/ui/flavor-title/flavor-title.component';
+import FlavorBtn from '../../components/ui/flavor-btn/flavor-btn.component';
 
 const FlavorSection = () => {
   return (
