@@ -1,13 +1,16 @@
 import { useEffect, useContext, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+
 import { MenubarContext } from '../../../context/menubar/menubar.contaxt';
 
 const MenubarButton = () => {
   const { isOpenMenubar, setIsOpenMenubar } = useContext(MenubarContext);
+
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
   const tlRef = useRef(null);
+
   const toggelIsOpenMenubar = () => setIsOpenMenubar(!isOpenMenubar)
   useGSAP(() => {
     tlRef.current = gsap.timeline({
@@ -45,15 +48,6 @@ const MenubarButton = () => {
           ease: "power3.inOut",
         },
         "<",
-      )
-      .to(
-        line2Ref.current,
-        {
-          width: 28,
-          duration: 0.15,
-          ease: "power2.out",
-        },
-        "<0.1",
       );
   }, []);
 
@@ -70,10 +64,10 @@ const MenubarButton = () => {
     <button
       onClick={toggelIsOpenMenubar}
       aria-label={isOpenMenubar ? "Close menubar" : "Open menubar"}
-      className="relative z-1000 flex flex-col justify-center items-end gap-2.75 cursor-pointer p-2"
+      className="relative z-1000 flex flex-col justify-center items-end gap-2 cursor-pointer p-2"
     >
-      <span ref={line1Ref} className="block w-7 h-0.5 bg-deep-navy rounded-xs" />
-      <span ref={line2Ref} className="block w-5 h-0.5 bg-deep-navy rounded-xs" />
+      <span ref={line1Ref} className="block w-11 h-0.5 bg-deep-navy rounded-xs" />
+      <span ref={line2Ref} className="block w-11 h-0.5 bg-deep-navy rounded-xs" />
     </button>
   );
 };

@@ -5,6 +5,7 @@ import { ScrollSmoother } from 'gsap/all';
 
 import Navbar from '../navbar/navbar.component';
 import Footer from '../footer/footer.component';
+import { Menubar } from '../../pages/pages';
 
 const MainLayout = () => {
   const location = useLocation();
@@ -23,17 +24,20 @@ const MainLayout = () => {
   });
 
   return (
-    <div id="smooth-wrapper" className="flex flex-col min-h-screen">
-      <div id="smooth-content" className="flex flex-col flex-1">
-        <Navbar />
-        
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        
-        {!hideFooter && <Footer />}
+    <>
+      <Menubar />
+      <Navbar />
+      <div id="smooth-wrapper" className="flex flex-col min-h-screen">
+        <div id="smooth-content" className="flex flex-col flex-1">
+          
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          
+          {!hideFooter && <Footer />}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
