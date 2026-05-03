@@ -69,13 +69,13 @@ const HeroSection = () => {
           <>
             {isMobile && (
               <img
-                src="/src/assets/images/mobile-hero-section.webp"
+                src="https://i.ibb.co/27QcdDB5/mobile-hero-section.webp"
                 alt="flavors BRST"
                 className="absolute bottom-30 size-full object-cover"
               />
             )}
             <img
-              src="/src/assets/images/hero-img.webp"
+              src="https://i.ibb.co/PZ2T4xtY/hero-img.webp"
               alt="flavors BRST"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain"
             />

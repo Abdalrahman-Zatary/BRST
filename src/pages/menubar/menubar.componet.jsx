@@ -1,5 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/all';
@@ -10,38 +12,42 @@ const MENU_LINKS = [
   {
     label: "Shop",
     path: "/shop",
-    imageUrl: "https://i.ibb.co/HMTP85M/bg-mango-blaze.webp",
+    imageUrl: "https://i.ibb.co/W4nZ8BHv/menubar-2.webp",
   },
   {
     label: "Find in Stores",
     path: "/stores",
-    imageUrl: "https://i.ibb.co/TMwZm03z/bg-berry-rush.webp",
+    imageUrl: "https://i.ibb.co/nxsbzHz/menubar-1.webp",
   },
   {
     label: "About Us",
     path: "/about",
-    imageUrl: "https://i.ibb.co/Q3PhnNL5/bg-wild-blueberry.webp",
+    imageUrl: "https://i.ibb.co/pBBmFbhW/menubar-4.webp",
   },
   {
     label: "BRST academy",
     path: "/academy",
-    imageUrl: "https://i.ibb.co/Q3PhnNL5/bg-wild-blueberry.webp",
+    imageUrl: "https://i.ibb.co/KxFPt08L/menubar-3.webp",
   },
   {
     label: "Programs",
     path: "/programs",
-    imageUrl: "https://i.ibb.co/PvXwBH0c/bg-coconut-cloud.webp",
+    imageUrl: "https://i.ibb.co/mC0LVX8h/menubar-5.webp",
   },
   {
     label: "Contacts",
     path: "/contact",
-    imageUrl: "https://i.ibb.co/PsGQ42tT/bg-lemon-zap.webp",
+    imageUrl: "https://i.ibb.co/TB7qwqcV/menubar-6.webp",
   },
 ];
 
-const DEFAULT_BG = "https://i.ibb.co/pvthR8QC/bg-melon-drop.webp";
+const DEFAULT_BG = "https://i.ibb.co/Jjs04pXq/menubar-defaulet.webp";
 
 const Menubar = () => {
+  const isSmallMobile = useMediaQuery({
+    query: "(max-width: 640px)",
+  });
+
   const navigate = useNavigate();
   const { isOpenMenubar, setIsOpenMenubar } = useContext(MenubarContext);
 
@@ -161,23 +167,20 @@ const Menubar = () => {
       style={{ clipPath: "inset(0 0 100% 0)" }}
     >
       {/* Left Navigation */}
-      <div className="w-1/2 flex flex-col justify-center items-center text-center relative">
-        <nav className="flex flex-col pt-17.5">  
+      <div className="sm:w-1/2 w-full flex flex-col justify-center items-center text-center relative">
+        <nav className="flex flex-col pt-17.5">
           {MENU_LINKS.map((link, index) => (
-            <div
-              key={link.path}
-              className="overflow-hidden"
-            >
+            <div key={link.path} className="overflow-hidden">
               <button
-                ref={element => linkInnerRefs.current[index] = element}
+                ref={(element) => (linkInnerRefs.current[index] = element)}
                 className="cursor-pointer w-max p-0"
                 onMouseEnter={() => handleLinkEnter(index)}
                 onMouseLeave={handleLinkLeave}
                 onClick={() => handleLinkClick(link.path)}
               >
                 <span
-                  ref={element => linkTextRefs.current[index] = element}
-                  className="font-sans font-bold uppercase text-[clamp(2.8rem,6vw,4.5rem)] leading-none tracking-tighter text-deep-navy block"
+                  ref={(element) => (linkTextRefs.current[index] = element)}
+                  className="font-sans font-bold uppercase sm:text-[clamp(2.8rem,6vw,4.5rem)] text-6xl leading-none tracking-tighter text-deep-navy block"
                 >
                   {link.label}
                 </span>
@@ -187,29 +190,37 @@ const Menubar = () => {
         </nav>
 
         <ul className="flex items-center gap-7 mt-6 font-paragraph text-sm">
-          <li className="cursor-pointer" ><a href="">YouTube</a></li>
-          <li className="cursor-pointer" ><a href=""></a>Instagram</li>
-          <li className="cursor-pointer" ><a href=""></a>TikTok</li>
+          <li className="cursor-pointer">
+            <a href="">YouTube</a>
+          </li>
+          <li className="cursor-pointer">
+            <a href=""></a>Instagram
+          </li>
+          <li className="cursor-pointer">
+            <a href=""></a>TikTok
+          </li>
         </ul>
       </div>
       {/* Right Background Image */}
-      <div className="w-1/2 relative overflow-hidden">
-        <img 
-          ref={defaultImageRef}
-          src={DEFAULT_BG}
-          alt="BRST default"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {MENU_LINKS.map((link, index) => (
-          <img 
-            key={link.path}
-            ref={element => imageRefs.current[index] = element}
-            src={link.imageUrl}
-            alt={link.label}
-            className="absolute inset-0 w-full h-full object-cover opacity-0 scale-[1.07]"
+      {!isSmallMobile && (
+        <div className="w-1/2 relative overflow-hidden">
+          <img
+            ref={defaultImageRef}
+            src={DEFAULT_BG}
+            alt="BRST default"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-        ))}
-      </div>
+          {MENU_LINKS.map((link, index) => (
+            <img
+              key={link.path}
+              ref={(element) => (imageRefs.current[index] = element)}
+              src={link.imageUrl}
+              alt={link.label}
+              className="absolute inset-0 w-full h-full object-cover opacity-0 scale-[1.07]"
+            />
+          ))}
+        </div>
+      )}
     </main>
   );
 };
