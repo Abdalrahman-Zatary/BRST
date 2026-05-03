@@ -5,8 +5,8 @@ import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 import gsap from 'gsap/all';
 
-import { nutrientLists } from '../../../utils/constants/brstDetailes.Data';
-import { replayTimelineOnEnter } from '../../../utils/helpers/gsapReplay';
+import { nutrientLists } from '../../utils/constants/brstDetailes.Data';
+import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
 const NutritionSection = () => {
   const isMobile = useMediaQuery({

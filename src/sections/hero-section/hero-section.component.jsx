@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useMediaQuery } from 'react-responsive';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const isMobile = useMediaQuery({
     query: "(max-width: 767px)",
   });
@@ -69,13 +71,13 @@ const HeroSection = () => {
           <>
             {isMobile && (
               <img
-                src="/src/assets/images/mobile-hero-section.webp"
+                src="https://i.ibb.co/27QcdDB5/mobile-hero-section.webp"
                 alt="flavors BRST"
                 className="absolute bottom-30 size-full object-cover"
               />
             )}
             <img
-              src="/src/assets/images/hero-img.webp"
+              src="https://i.ibb.co/PZ2T4xtY/hero-img.webp"
               alt="flavors BRST"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain"
             />
@@ -109,7 +111,7 @@ const HeroSection = () => {
             embrace your inner kid with every deliciously smooth chug.
           </h2>
 
-          <div className="hero-button">
+          <div onClick={() => navigate("/shop")} className="hero-button">
             <a>Chug a BRST</a>
           </div>
         </div>

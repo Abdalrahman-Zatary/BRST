@@ -1,8 +1,4 @@
-import { useGSAP } from '@gsap/react';
-import { ScrollSmoother } from 'gsap/all';
-
 import {
-  Navbar,
   HeroSection,
   MessageSection,
   FlavorSection,
@@ -10,40 +6,22 @@ import {
   BenefitSection,
   TestimonialSection,
   LocationSection,
-  Footer,
-} from '../../components/layout/layout';
+} from '../../sections/sections';
 
 const Home = () => {
-  useGSAP(() => {
-    ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.5,
-      smoothTouch: 0,
-      effects: true,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-    });
-  });
 
   return (
-    <main>
-      <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <HeroSection />
-          <MessageSection />
-          <FlavorSection />
-          <NutritionSection />
-          <div>
-            <BenefitSection />
-            <TestimonialSection />
-          </div>
-          <LocationSection />
-          <Footer />
-        </div>
+    <>
+      <HeroSection />
+      <MessageSection />
+      <FlavorSection />
+      <NutritionSection />
+      <div>
+        <BenefitSection />
+        <TestimonialSection />
       </div>
-    </main>
+      <LocationSection />
+    </>
   );
 };
 export default Home;
