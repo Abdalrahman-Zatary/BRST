@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery } from 'react-responsive';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 const FlavorBtn = () => {
+  const navigate = useNavigate();
   const isTablet = useMediaQuery({
     query: "(min-width: 1023px)",
   });
@@ -66,7 +68,7 @@ const FlavorBtn = () => {
   }, [isTablet]);
 
   return (
-    <div className="cta-wrapper">
+    <div onClick={() => navigate("/shop")} className="cta-wrapper">
       <a className="cta-btn">Git it now</a>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
@@ -5,6 +6,8 @@ import { SplitText } from 'gsap/all';
 import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
 const LocationSection = () => {
+  const navigate = useNavigate();
+
   useGSAP(() => {
     const titleSplit = SplitText.create(".location-title", {
       type: "chars",
@@ -85,7 +88,7 @@ const LocationSection = () => {
               get them delivered (to your door).
             </p>
           </div>
-          <div className="btn-location">
+          <div onClick={() => navigate("/stores")}  className="btn-location">
             <a className="">Find in stores</a>
           </div>
         </div>
