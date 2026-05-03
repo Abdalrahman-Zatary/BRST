@@ -82,7 +82,7 @@ const MenubarButton = () => {
       ref={buttonRef}
       onClick={toggelIsOpenMenubar}
       aria-label={isOpenMenubar ? "Close menubar" : "Open menubar"}
-      className="relative z-1000 flex flex-col justify-center items-center w-10 h-10 gap-2 cursor-pointer rounded-full bg-transparent p-2"
+      className=" border-none outline-none relative left-2.75 z-1000 flex flex-col justify-center items-center w-10 h-10 gap-2 cursor-pointer rounded-full bg-transparent p-2"
     >
       <span
         ref={line1Ref}
