@@ -21,12 +21,12 @@ const NutritionSection = () => {
     const titleSplit = SplitText.create(".nutrition-title", {
       type: "chars",
     });
-    const paragraphSplit = SplitText.create(".nutrition-section p", {
+    const paragraphSplit = SplitText.create(".nutrition-section .nutrition-text", {
       type: "words, lines",
       linesClass: "paragraph-line",
     });
     const paragraphListSplit = SplitText.create(
-      ".nutrition-section .list-wrapper p",
+      ".nutrition-section .list-wrapper .nutrition-text",
       {
         type: "words, lines",
         linesClass: "paragraph-line",
@@ -114,7 +114,7 @@ const NutritionSection = () => {
 
         <div className="flex sm:justify-center items-center sm:mt-0 mt-3">
           <div className="md:max-w-75 max-w-xs">
-            <p className="text-sm sm:text-right text-balance font-paragraph">
+            <p className="nutrition-text text-sm sm:text-right text-balance font-paragraph">
               Juice contains a powerful array of nutrients, including vitamins,
               minerals, and antioxidants, and this is 100% natural.
             </p>
