@@ -2,6 +2,7 @@ import {
   ShopHeroSection,
   FlavorShelfSection,
   TestimonialSection,
+  LocationSection,
 } from '../../sections/sections';
 
 const Shop = () => {
@@ -10,6 +11,7 @@ const Shop = () => {
       <ShopHeroSection />
       <FlavorShelfSection />
       <TestimonialSection withOffset={false} />
+      <LocationSection />
     </>
   );
 };
