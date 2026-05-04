@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import gsap from 'gsap';
 import { cards } from '../../utils/constants/testinonialCards.Data';
 
-const TestimonialSection = () => {
+const TestimonialSection = ({ withOffset }) => {
   const vdRef = useRef([]);
 
   const isTablit = useMediaQuery({
@@ -15,9 +15,11 @@ const TestimonialSection = () => {
   })
 
   useGSAP(() => {
-    gsap.set(".testimonials-section", {
-      marginTop: isMobile ? "-10vh" : "-140vh",
-    });
+    if (withOffset) {
+      gsap.set(".testimonials-section", {
+        marginTop: isMobile ? "-10vh" : "-140vh",
+      });
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
