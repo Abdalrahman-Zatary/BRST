@@ -206,7 +206,7 @@
       }
     }
   }
-  /*  */
+  /* ShopHeroSection */
   .shop-hero-section {
     @apply py-[10vw] bg-warm-sunrise flex flex-col justify-center items-center gap-14;
 
@@ -229,6 +229,42 @@
 
     .shop-hero-subtitle {
       @apply font-paragraph text-deep-navy/80 text-center leading-tight text-xs md:text-sm max-w-sm sm:px-0 px-4;
+    }
+  }
+  /* FlavorShelfSection */
+  .flavor-shelf-section {
+    @apply bg-warm-sunrise md:px-7 px-4 pb-16; 
+
+    .flavor-shelf-grid {
+      @apply grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-4 gap-3 
+    }
+
+    .flavor-card {
+      @apply relative md:rounded-3xl rounded-2xl overflow-hidden cursor-pointer flex flex-col lg:min-h-[45vw] sm:min-h-[60vw] min-h-[90vw] p-4;
+
+      .flavor-card-header {
+        @apply flex justify-center items-center z-20 relative;
+
+        .flavor-card-name {
+          @apply font-sans text-warm-sunrise md:text-5xl sm:text-4xl text-3xl font-semibold uppercase tracking-tighter;
+        }
+      }
+
+      .flavor-card-img-product {
+        @apply absolute inset-0 flex items-end justify-center z-20 pb-[clamp(0.5rem,2vw,1.5rem)];
+      }
+
+      .flavor-card-product {
+        @apply object-contain will-change-transform -mt-[15%] h-[clamp(70%,80%,90%)] max-h-[85%];
+      }
+
+      .flavor-card-img-frute {
+        @apply absolute inset-0 flex justify-center ;
+      }
+
+      .flavor-card-frute {
+        @apply object-contain will-change-transform -mt-[5%] h-[clamp(70%,80%,90%)] max-h-[85%] lg:opacity-0 opacity-100;
+      }
     }
   }
   /* Footer */
