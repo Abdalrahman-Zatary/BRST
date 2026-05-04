@@ -65,7 +65,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section className="bg-near-black">
+    <section className="bg-deep-navy">
       <div className="hero-container">
         {isTablet ? (
           <>
