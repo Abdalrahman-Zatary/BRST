@@ -18,7 +18,7 @@ const Home = () => {
       <NutritionSection />
       <div>
         <BenefitSection />
-        <TestimonialSection />
+        <TestimonialSection withOffset={true} />
       </div>
       <LocationSection />
     </>

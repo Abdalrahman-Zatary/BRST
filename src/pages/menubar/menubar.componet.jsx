@@ -73,7 +73,7 @@ const Menubar = () => {
     })
       .to(menubarRef.current, {
         clipPath: "inset(0% 0% 0% 0%)",
-        duration: 0.95,
+        duration: 1.5,
         ease: "power4.in",
       })
       .from(

@@ -5,6 +5,8 @@ import NutritionSection from './nutrition-section/nutrition-section.component';
 import BenefitSection from './benefit-section/benefit-section.component';
 import TestimonialSection from './testimonial-section/testimonial-section.conponent';
 import LocationSection from './location-section/location-section.component';
+import ShopHeroSection from './shop-hero-section/shop-hero-section.component';
+import FlavorShelfSection from './flavor-grid-section/flavor-grid-section.component';
 
 export {
   HeroSection,
@@ -14,4 +16,6 @@ export {
   BenefitSection,
   TestimonialSection,
   LocationSection,
+  ShopHeroSection,
+  FlavorShelfSection,
 };

@@ -1,6 +1,18 @@
+import {
+  ShopHeroSection,
+  FlavorShelfSection,
+  TestimonialSection,
+  LocationSection,
+} from '../../sections/sections';
+
 const Shop = () => {
   return (
-    <section>Shop</section>
+    <>
+      <ShopHeroSection />
+      <FlavorShelfSection />
+      <TestimonialSection withOffset={false} />
+      <LocationSection />
+    </>
   );
 };
 
