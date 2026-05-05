@@ -290,14 +290,6 @@
         }
       }
     }
-
-    .stores-map-container {
-      @apply relative flex justify-center md::pt-[40vw] sm:pt-[45vw] pt-[60vw] h-screen;
-
-      .stores-map-google {
-        @apply w-[80%] h-screen border-4 rounded-xl border-sunrise-light;
-      }
-    }
   }
   /* Footer */
   .footer {

@@ -53,9 +53,9 @@ const StoresHeroSection = () => {
         </div>
       </div>
 
-      <div className="stores-map-container">
+      <div className="relative flex justify-center md::pt-[30vw] sm:pt-[45vw] pt-[60vw] h-screen">
         <iframe
-          className="stores-map-google"
+          className="w-[80%] h-screen border-4 rounded-xl border-sunrise-light"
           src="https://maps.google.com/maps?q=52.3702,4.8952&z=15&output=embed"
         ></iframe>
       </div>
