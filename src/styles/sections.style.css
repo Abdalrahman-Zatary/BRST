@@ -34,30 +34,6 @@
       }
     }
   }
-  /* StoresHeroSection */
-  .stores-hero-section {
-    @apply relative bg-warm-sunrise w-screen min-h-dvh;
-
-    .stores-hero-content {
-      @apply absolute w-full top-0 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center pt-[10vw];
-
-      .stores-hero-title {
-        @apply text-deep-navy 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] lg:py-0 md:py-5 sm:py-0 py-3 font-bold uppercase leading-[9vw] tracking-[-0.35vw];
-      }
-
-      .stores-hero-text-scroll {
-        @apply -rotate-3 mb-8 border-[0.5vw] border-warm-sunrise;
-
-        .stores-hero-subtitle {
-          @apply bg-golden-mango;
-        }
-
-        h1 {
-          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] text-warm-sunrise leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
-        }
-      }
-    }
-  }
   /* MessageSection */
   .message-content {
     @apply relative z-20 bg-dark-ember text-warm-sunrise min-h-dvh overflow-hidden flex justify-center items-center;
@@ -288,6 +264,38 @@
 
       .flavor-card-frute {
         @apply object-contain will-change-transform -mt-[5%] h-[clamp(70%,80%,90%)] max-h-[85%] lg:opacity-0 opacity-100;
+      }
+    }
+  }
+  /* StoresHeroSection */
+  .stores-hero-section {
+    @apply relative flex flex-col gap-32 bg-warm-sunrise w-screen sm:h-[200dvh] h-[165dvh];
+
+    .stores-hero-content {
+      @apply absolute w-full top-0 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center sm:pt-[10vw] pt-[20vw];
+
+      .stores-hero-title {
+        @apply text-deep-navy 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] lg:py-0 md:py-5 sm:py-0 py-3 font-bold uppercase leading-[9vw] tracking-[-0.35vw];
+      }
+
+      .stores-hero-text-scroll {
+        @apply -rotate-3 mb-8 border-[0.5vw] border-warm-sunrise;
+
+        .stores-hero-subtitle {
+          @apply bg-golden-mango;
+        }
+
+        h1 {
+          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] text-warm-sunrise leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
+        }
+      }
+    }
+
+    .stores-map-container {
+      @apply relative flex justify-center md::pt-[40vw] sm:pt-[45vw] pt-[60vw] h-screen;
+
+      .stores-map-google {
+        @apply w-[80%] h-screen border-4 rounded-xl border-sunrise-light;
       }
     }
   }

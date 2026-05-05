@@ -2,6 +2,14 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 
+const LOCATION = {
+  lat: 52.3702,
+  lng: 4.8952,
+  zoom: 15,
+  label: "BRST Amsterdam HQ",
+  address : "Amsterdam, Netherlands",
+}
+
 const StoresHeroSection = () => {
   useGSAP(() => {
     const titleSpilt = SplitText.create(".stores-hero-title", {
@@ -34,15 +42,22 @@ const StoresHeroSection = () => {
           <h1 className="stores-hero-title">search for BRST</h1>
         </div>
         <div
-          style={{ 
-            clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)" 
+          style={{
+            clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
           }}
           className="stores-hero-text-scroll opacity-0"
         >
-          <div className="stores-hero-subtitle lg:py-0 md:py-3 sm:py-0 py-2">
+          <div className="stores-hero-subtitle lg:py-0 md:py-3 sm:py-0 py-0 sm:pt-0 pt-3">
             <h1>near you</h1>
           </div>
         </div>
+      </div>
+
+      <div className="stores-map-container">
+        <iframe
+          className="stores-map-google"
+          src="https://maps.google.com/maps?q=52.3702,4.8952&z=15&output=embed"
+        ></iframe>
       </div>
     </section>
   );
