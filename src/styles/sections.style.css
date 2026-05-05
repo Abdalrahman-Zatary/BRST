@@ -291,6 +291,22 @@
       }
     }
   }
+  /* StoresFindSection */
+  .stores-find-section {
+    @apply min-h-dvh relative overflow-hidden bg-near-black -mt-0.5 will-change-transform backface-hidden;
+
+    .stores-find-container {
+      @apply relative mt-6 md:h-full sm:h-125 h-105 overflow-hidden text-center;
+
+      .stores-find-content {
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col justify-center items-center w-full lg:gap-10 md:gap-6 gap-12;
+
+        .btn-stores-find {
+          @apply backdrop-blur-xl border border-warm-sunrise/40 hover:bg-warm-sunrise text-warm-sunrise hover:text-deep-navy transition-all duration-500 uppercase font-bold text-sm rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
+        }
+      }
+    }
+  }
   /* Footer */
   .footer {
     @apply min-h-dvh overflow-hidden relative bg-near-black will-change-transform backface-hidden -mt-0.5;
