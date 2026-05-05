@@ -10,6 +10,7 @@ import FlavorShelfSection from './flavor-grid-section/flavor-grid-section.compon
 import StoresHeroSection from './stores-hero-section/stores-hero-section.component';
 import StoresListPreviewSection from './stores-list-preview-section/stores-list-preview-section.component';
 import StoresFindSection from './stores-find-section/stores-find-section.componet';
+import ProgramsHeroSection from './programs-hero-section/programs-hero-section.component';
 
 export {
   HeroSection,
@@ -24,4 +25,5 @@ export {
   StoresHeroSection,
   StoresListPreviewSection,
   StoresFindSection,
+  ProgramsHeroSection,
 };
