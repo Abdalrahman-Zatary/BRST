@@ -8,6 +8,7 @@ import LocationSection from './location-section/location-section.component';
 import ShopHeroSection from './shop-hero-section/shop-hero-section.component';
 import FlavorShelfSection from './flavor-grid-section/flavor-grid-section.component';
 import StoresHeroSection from './stores-hero-section/stores-hero-section.component';
+import StoresListPreviewSection from './stores-list-preview-section/stores-list-preview-section.component';
 
 export {
   HeroSection,
@@ -20,4 +21,5 @@ export {
   ShopHeroSection,
   FlavorShelfSection,
   StoresHeroSection,
+  StoresListPreviewSection,
 };

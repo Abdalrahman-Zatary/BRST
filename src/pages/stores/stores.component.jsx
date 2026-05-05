@@ -1,8 +1,11 @@
-import { StoresHeroSection } from '../../sections/sections';
+import { StoresHeroSection, StoresListPreviewSection } from '../../sections/sections';
 
 const Stores = () => {
   return (
-    <StoresHeroSection />
+    <>
+      <StoresHeroSection />
+      <StoresListPreviewSection />
+    </>
   );
 };
 
