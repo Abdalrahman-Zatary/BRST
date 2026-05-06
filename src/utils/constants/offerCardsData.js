@@ -1,0 +1,40 @@
+const cards = [
+  {
+    num: "01",
+    title: "Free Product",
+    subTitle: "Delivered monthly",
+    text: "Free BRST. Program members get product delivered to their front door every month. You keep posting we keep delivering.",
+    initRot: -29,
+    finaleRot: 3,
+    tabletRot: "rotate-1",
+    zIndex: "z-10",
+    top: "top-0",
+    left: "left-[7%]",
+  },
+  {
+    num: "02",
+    title: "Merch",
+    subTitle: "Rep the brand",
+    text: "Hoodies, beanies, shirts, Speedos ok maybe not speedos but you get the idea.",
+    initRot: -28,
+    finaleRot: -4,
+    tabletRot: "-rotate-2 -mt-1",
+    zIndex: "z-20",
+    top: "top-[-3%]",
+    left: "left-1/3",
+  },
+  {
+    num: "03",
+    title: "Free Product",
+    subTitle: "Part of R&D",
+    text: "As a Program member you’ll be on the R&D team. We’ll send you new flavors with a quick survey because we want the feedbacks!",
+    initRot: 25,
+    finaleRot: 7,
+    tabletRot: "rotate-3 -mt-1",
+    zIndex: "z-30",
+    top: "top-[2%]",
+    left: "left-[60%]",
+  },
+];
+
+export { cards };
