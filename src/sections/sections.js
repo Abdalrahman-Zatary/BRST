@@ -11,6 +11,7 @@ import StoresHeroSection from './stores-hero-section/stores-hero-section.compone
 import StoresListPreviewSection from './stores-list-preview-section/stores-list-preview-section.component';
 import StoresFindSection from './stores-find-section/stores-find-section.componet';
 import ProgramsHeroSection from './programs-hero-section/programs-hero-section.component';
+import ProgramsMessageSection from './programs-message-section/programs-message-section.component';
 
 export {
   HeroSection,
@@ -26,4 +27,5 @@ export {
   StoresListPreviewSection,
   StoresFindSection,
   ProgramsHeroSection,
+  ProgramsMessageSection,
 };

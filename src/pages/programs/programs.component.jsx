@@ -1,8 +1,11 @@
-import { ProgramsHeroSection } from '../../sections/sections';
+import { ProgramsHeroSection, ProgramsMessageSection } from '../../sections/sections';
 
 const Programs = () => {
   return (
-    <ProgramsHeroSection />
+    <>
+      <ProgramsHeroSection />
+      <ProgramsMessageSection />
+    </>
   );
 };
 
