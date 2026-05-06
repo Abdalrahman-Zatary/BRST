@@ -1,10 +1,10 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
 import gsap from 'gsap';
 
 const ProgramsHeroSection = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useGSAP(() => {
     const titleSpilt = SplitText.create(".programs-hero-title", {
@@ -58,7 +58,7 @@ const ProgramsHeroSection = () => {
           </div>
           <div
             style={{
-              clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+              clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
             }}
             className="programs-hero-text-scroll opacity-0"
           >
@@ -69,7 +69,7 @@ const ProgramsHeroSection = () => {
         </div>
         <div className="programs-hero-wrapper">
           <div className="flex flex-col items-center gap-2">
-            <div className="programs-hero-button">
+            <div onClick={() => navigate("/contact")} className="programs-hero-button">
               <a>Let's Go!</a>
             </div>
             <p className="text-xs font-paragraph text-warm-sunrise">
