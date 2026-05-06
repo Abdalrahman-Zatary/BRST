@@ -27,9 +27,8 @@ const ProgramsEthosSection = () => {
 
     replayTimelineOnEnter(titleTl, ".programs-ethos-section", {
       start: "10% 55%",
-      markers: true,
     });
-  })
+  });
 
   return (
     <section className="programs-ethos-section">

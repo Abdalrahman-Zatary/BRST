@@ -46,7 +46,7 @@ const ProgramsHeroSection = () => {
     <section className="bg-deep-navy">
       <div className="programs-hero-container">
         <video
-          src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475117/benefit-section_os67dt.mp4"
+          src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1778103497/programs_ujrk9k.mp4"
           autoPlay
           muted
           playsInline
