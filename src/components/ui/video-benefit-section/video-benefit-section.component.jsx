@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useMediaQuery } from 'react-responsive';
 
-const VideoBenefitSection = () => {
+const VideoBenefitSection = ({ videoUrl, Rotate }) => {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -22,11 +22,10 @@ const VideoBenefitSection = () => {
 
             const y = Math.sin(progress * 60) * 10 * intensity;
             const x = gsap.utils.random(-3, 3) * intensity;
-
             gsap.set(".video-box", {
               x,
               y,
-              rotation: x * 0.2,
+              rotation: !Rotate && x * 0.2,
             });
           },
         },
@@ -35,12 +34,20 @@ const VideoBenefitSection = () => {
       tl.to(".video-box", {
         clipPath: "circle(100% at 50% 50%)",
         ease: "power1.inOut",
-      });
+      })
+      if (Rotate) {
+        tl.to(".video-box", {
+          rotate: 7,
+          scale: 0.9,
+          yPercent: 30,
+          ease: "power1.inOut",
+        });
+      }
     }
   });
 
   return (
-    <section className="vd-benefit-section">
+    <section className="vd-benefit-section md:h-[110vh] h-dvh overflow-hidden lg:-translate-y-[15%]! md:-translate-y-[33%]! translate-y-0! lg:mt-0 md:mt-48 mt-10">
       <div
         style={{
           clipPath: isMobile
@@ -50,11 +57,12 @@ const VideoBenefitSection = () => {
         className="size-full video-box"
       >
         <video
-          src="https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475117/benefit-section_os67dt.mp4"
+          src={videoUrl}
           playsInline
           muted
           loop
           autoPlay
+          className="size-full absolute inset-0 object-cover"
         />
 
         <div className="absolute-center md:scale-100 scale-200">
@@ -63,7 +71,7 @@ const VideoBenefitSection = () => {
             alt="video"
             className="spin-circle size-[15vw]"
           />
-          <div className="play-btn">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full">
             <img
               src="https://i.ibb.co/Yqh6BNL/play.webp"
               alt="play"
