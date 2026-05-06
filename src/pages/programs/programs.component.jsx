@@ -1,10 +1,11 @@
-import { ProgramsHeroSection, ProgramsMessageSection } from '../../sections/sections';
+import { ProgramsHeroSection, ProgramsMessageSection, ProgramsEthosSection } from '../../sections/sections';
 
 const Programs = () => {
   return (
     <>
       <ProgramsHeroSection />
       <ProgramsMessageSection />
+      <ProgramsEthosSection />
     </>
   );
 };

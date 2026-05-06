@@ -6,6 +6,8 @@ import VideoBenefitSection from '../../components/ui/video-benefit-section/video
 import ClipPathTitle from '../../components/ui/clipPath-title/clipPat-title.component';
 
 const BenefitSection = () => {
+  const videoUrl = "https://res.cloudinary.com/dxd3m1fz3/video/upload/v1777475117/benefit-section_os67dt.mp4";
+
   useGSAP(() => {
     const firstTextSplit = SplitText.create(".first-paragraph", {
       type: "words, lines",
@@ -130,7 +132,7 @@ const BenefitSection = () => {
       </div>
 
       <div className="relative">
-        <VideoBenefitSection />
+        <VideoBenefitSection Rotate={false} videoUrl={videoUrl} />
       </div>
     </section>
   );

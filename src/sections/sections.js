@@ -12,6 +12,7 @@ import StoresListPreviewSection from './stores-list-preview-section/stores-list-
 import StoresFindSection from './stores-find-section/stores-find-section.componet';
 import ProgramsHeroSection from './programs-hero-section/programs-hero-section.component';
 import ProgramsMessageSection from './programs-message-section/programs-message-section.component';
+import ProgramsEthosSection from './programs-ethos-section/programs-ethos-section.component';
 
 export {
   HeroSection,
@@ -28,4 +29,5 @@ export {
   StoresFindSection,
   ProgramsHeroSection,
   ProgramsMessageSection,
+  ProgramsEthosSection,
 };
