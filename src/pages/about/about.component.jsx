@@ -1,6 +1,10 @@
+import { AboutHeroSection } from '../../sections/sections';
+
 const About = () => {
   return (
-    <section>About us</section>
+    <>
+      <AboutHeroSection />
+    </>
   );
 };
 

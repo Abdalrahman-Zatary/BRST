@@ -13,6 +13,7 @@ import StoresFindSection from './stores-find-section/stores-find-section.compone
 import ProgramsHeroSection from './programs-hero-section/programs-hero-section.component';
 import ProgramsMessageSection from './programs-message-section/programs-message-section.component';
 import ProgramsEthosSection from './programs-ethos-section/programs-ethos-section.component';
+import AboutHeroSection from './about-hero-section/about-hero-section.component';
 
 export {
   HeroSection,
@@ -30,4 +31,5 @@ export {
   ProgramsHeroSection,
   ProgramsMessageSection,
   ProgramsEthosSection,
+  AboutHeroSection,
 };

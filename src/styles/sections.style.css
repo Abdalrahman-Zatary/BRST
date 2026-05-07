@@ -366,6 +366,29 @@
       }
     }
   }
+  /* AboutHeroSection */
+  .about-hero-section {
+    @apply bg-near-black w-screen relative h-[300vh] overflow-hidden;
+
+    .about-image-sticky {
+      @apply absolute top-0 left-0 w-full h-screen;
+
+      .about-image-bg {
+        @apply size-full object-cover will-change-[filter];
+      }
+    }
+    .about-content-wrapper {
+      @apply absolute inset-0 z-10 size-full flex flex-col;
+
+      .about-content-block {
+        @apply relative w-full h-screen overflow-hidden flex justify-center items-center text-center;
+
+        .about-content-text {
+          @apply w-[73vw] text-[4vw] uppercase font-bold font-sans leading-[105%] tracking-[-0.15vw] text-warm-sunrise;
+        }
+      }
+    }
+  }
   /* Footer */
   .footer {
     @apply min-h-dvh overflow-hidden relative bg-near-black will-change-transform backface-hidden -mt-0.5;
