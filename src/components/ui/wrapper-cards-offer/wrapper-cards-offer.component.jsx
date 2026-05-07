@@ -41,7 +41,7 @@ const WrapperCardsOffer = ({ cards ,about, programs }) => {
   });
 
   return (
-    <div className="cards-wrapper relative w-full lg:h-[clamp(300px,36vw,420px)] min-h-fit">
+    <div className="cards-wrapper relative w-full lg:h-[clamp(300px,36vw,380px)] min-h-fit">
       {programs &&
         cards.map((card, index) => (
           <div
@@ -73,7 +73,7 @@ const WrapperCardsOffer = ({ cards ,about, programs }) => {
           <div
             key={index}
             ref={(element) => (cardRefs.current[index] = element)}
-            className={`lg:absolute relative lg:w-[30vw] w-[85%] lg:h-[19vw] h-50 ${isTablet ? "top-0" : card.top} ${isTablet ? "left-1/2 -translate-x-1/2" : card.left} ${isTablet && card.tabletRot} bg-pale-cream rounded-4xl p-[2vw] flex flex-col justify-between border-[0.4vw] border-warm-sunrise origin-[center,bottom] will-change-transform ${card.zIndex}`}
+            className={`lg:absolute relative lg:w-[30vw] w-[85%] lg:h-[21vw] h-50 ${isTablet ? "top-0" : card.top} ${isTablet ? "left-1/2 -translate-x-1/2" : card.left} ${isTablet && card.tabletRot} bg-pale-cream rounded-4xl p-[2vw] flex flex-col justify-between border-[0.4vw] border-warm-sunrise origin-[center,bottom] will-change-transform ${card.zIndex}`}
           >
             <span className=" progarms-card-num text-xl font-paragraph text-deep-navy/30 leading-[0.18em]">
               {card.num}
