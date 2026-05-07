@@ -389,6 +389,26 @@
       }
     }
   }
+  /*  */
+  .about-ethos-section {
+    @apply relative bg-warm-sunrise min-h-dvh overflow-hidden w-screen -mt-0.5 will-change-transform backface-hidden;
+
+    .about-ethos-content {
+      @apply w-full flex flex-col items-center gap-2 pt-[10vw];
+
+      .about-ethos-title {
+        @apply overflow-hidden w-full text-center lg:py-0 py-3;
+      }
+
+      .about-manifesto {
+        @apply max-w-160 mt-10 text-center flex flex-col gap-6;
+
+        p {
+          @apply font-paragraph text-sm text-deep-navy/90 leading-none;
+        }
+      }
+    }
+  }
   /* Footer */
   .footer {
     @apply min-h-dvh overflow-hidden relative bg-near-black will-change-transform backface-hidden -mt-0.5;

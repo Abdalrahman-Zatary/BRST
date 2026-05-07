@@ -1,9 +1,10 @@
-import { AboutHeroSection } from '../../sections/sections';
+import { AboutHeroSection, AboutEthosSection } from '../../sections/sections';
 
 const About = () => {
   return (
     <>
       <AboutHeroSection />
+      <AboutEthosSection />
     </>
   );
 };
