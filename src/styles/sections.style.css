@@ -1,6 +1,7 @@
 @layer sections {
   .paragraph-line {
-    @apply text-nowrap overflow-hidden;
+    @apply text-nowrap;
+    /* clip-path: inset(100% 0 0 0); */
   }
   /* HeroSection */
   .hero-container {
@@ -384,7 +385,7 @@
         @apply relative w-full h-screen overflow-hidden flex justify-center items-center text-center;
 
         .about-content-text {
-          @apply w-[73vw] text-[4vw] uppercase font-bold font-sans leading-[105%] tracking-[-0.15vw] text-warm-sunrise;
+          @apply w-[73vw] md:text-[4vw] sm:text-4xl text-3xl uppercase font-bold font-sans leading-[105%] tracking-[-0.15vw] text-warm-sunrise;
         }
       }
     }

@@ -1,47 +1,85 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-// import { SplitText } from 'gsap/all';
+import { SplitText, ScrollTrigger } from 'gsap/all';
 
 const AboutHeroSection = () => {
   useGSAP(() => {
-    // const secondBlockSplit = SplitText.create(".second-block p", {
-    //   type: "lines",
-    //   linesClass: "paragraph-line",
-    // });
+    ScrollTrigger.create({
+      trigger: ".about-image-sticky",
+      start: "top top",
+      end: "300% top",
+      pin: true,
+      pinSpacing: false,
+    });
 
-    const tl = gsap.timeline({
+    gsap.to(".about-image-bg", {
+      filter: "blur(9px)",
+      ease: "none",
       scrollTrigger: {
-        trigger: ".about-image-sticky",
-        start: "top top",
-        end: "300% top",
-        scrub: 1.5,
-        pin: true,
+        trigger: ".about-hero-section",
+        start: "15% top",
+        end: "80% top",
+        scrub: true,
       },
     });
 
-    tl.to(".about-image-bg", {
-      filter: "blur(5px)",
-      ease: "power2.inOut",
-    });
+    const setupBlock = (paraSelector, blockSelector) => {
+      const split = SplitText.create(paraSelector, {
+        type: "lines",
+        linesClass: "paragraph-line",
+      });
 
-    // gsap.from(secondBlockSplit.lines, {
-    //   yPercent: 110,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".second-block p",
-    //     start: "top center",
-    //     end: "bottom center",
-    //     markers: true,
-    //     scrub: 1.5,
-    //   },
-    // });
+      const revealTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: blockSelector,
+          start: "20% 90%",
+          end: "80% 90%",
+          scrub: 1.5,
+        },
+      });
+      revealTl.fromTo(
+        split.lines,
+        {
+          clipPath: "inset(100% 0% 0% 0%)",
+        },
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          stagger: 0.15,
+          ease: "none",
+        },
+      );
+
+      const hideTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: blockSelector,
+          start: "20% 10%",
+          end: "80% 10%",
+          scrub: 1.5,
+        },
+      });
+      hideTl.fromTo(
+        split.lines,
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+        },
+        {
+          clipPath: "inset(0% 0% 100% 0%)",
+          stagger: 0.15,
+          ease: "none",
+        },
+      );
+    };
+
+    setupBlock(".second-block p", ".second-block");
+    setupBlock(".third-block p", ".third-block");
   });
 
   return (
     <section className="about-hero-section">
       <div className="about-image-sticky">
         <img
-          src="https://i.ibb.co/pBBmFbhW/menubar-4.webp"
+          src="https://i.ibb.co/60y33k5h/about.webp"
+          alt="about-hero"
           className="about-image-bg"
         />
       </div>
@@ -60,9 +98,9 @@ const AboutHeroSection = () => {
           </p>
         </div>
 
-        <div className="therd-block about-content-block z-30">
+        <div className="third-block about-content-block z-30">
           <p className="about-content-text">
-            "Now, we're a bit older but still all about Juice. the most out of
+            Now, we're a bit older but still all about Juice. the most out of
             life. BRST takes us down memory lane, fueling our bodies with high
             vitamins, energy,and no sugar. Let's keep the good times rolling!
           </p>
