@@ -1,6 +1,7 @@
 @layer sections {
   .paragraph-line {
-    @apply text-nowrap overflow-hidden;
+    @apply text-nowrap;
+    /* clip-path: inset(100% 0 0 0); */
   }
   /* HeroSection */
   .hero-container {
@@ -363,6 +364,49 @@
 
       .programs-ethos-button {
         @apply lg:-mt-8 z-50 mt-6 mb-8 text-deep-navy bg-mango-burst uppercase font-bold sm:text-sm text-xs rounded-full md:p-3.5 p-3 md:px-12 px-10 cursor-pointer;
+      }
+    }
+  }
+  /* AboutHeroSection */
+  .about-hero-section {
+    @apply bg-near-black w-screen relative h-[300vh] overflow-hidden;
+
+    .about-image-sticky {
+      @apply absolute top-0 left-0 w-full h-screen;
+
+      .about-image-bg {
+        @apply size-full object-cover will-change-[filter];
+      }
+    }
+    .about-content-wrapper {
+      @apply absolute inset-0 z-10 size-full flex flex-col;
+
+      .about-content-block {
+        @apply relative w-full h-screen overflow-hidden flex justify-center items-center text-center;
+
+        .about-content-text {
+          @apply w-[73vw] md:text-[4vw] sm:text-4xl text-3xl uppercase font-bold font-sans leading-[105%] tracking-[-0.15vw] text-warm-sunrise;
+        }
+      }
+    }
+  }
+  /*  */
+  .about-ethos-section {
+    @apply relative bg-warm-sunrise min-h-dvh overflow-hidden w-screen -mt-0.5 will-change-transform backface-hidden;
+
+    .about-ethos-content {
+      @apply w-full flex flex-col items-center gap-2 pt-[10vw];
+
+      .about-ethos-title {
+        @apply overflow-hidden w-full text-center lg:py-0 py-3;
+      }
+
+      .about-manifesto {
+        @apply max-w-160 mt-10 text-center flex flex-col gap-6;
+
+        p {
+          @apply font-paragraph text-sm text-deep-navy/90 leading-none;
+        }
       }
     }
   }

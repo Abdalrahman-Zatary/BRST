@@ -1,6 +1,18 @@
+import { AboutHeroSection, AboutEthosSection } from '../../sections/sections';
+
 const About = () => {
   return (
-    <section>About us</section>
+    <>
+      <AboutHeroSection />
+      <AboutEthosSection />
+      <div className="bg-near-black">
+        <img
+          src="https://i.ibb.co/cm31PH9/location-dip.webp"
+          alt="dip"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </>
   );
 };
 
