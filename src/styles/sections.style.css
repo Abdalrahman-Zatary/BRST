@@ -1,7 +1,6 @@
 @layer sections {
   .paragraph-line {
-    @apply text-nowrap;
-    /* clip-path: inset(100% 0 0 0); */
+    @apply text-nowrap overflow-hidden;
   }
   /* HeroSection */
   .hero-container {
@@ -390,7 +389,7 @@
       }
     }
   }
-  /*  */
+  /* AboutEthosSection */
   .about-ethos-section {
     @apply relative bg-warm-sunrise min-h-dvh overflow-hidden w-screen -mt-0.5 will-change-transform backface-hidden;
 
