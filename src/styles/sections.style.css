@@ -2,6 +2,12 @@
   .paragraph-line {
     @apply text-nowrap overflow-hidden;
   }
+  .line {
+    @apply overflow-hidden;
+  }
+  .line span {
+    @apply block will-change-transform;
+  }
   /* HeroSection */
   .hero-container {
     @apply relative bg-warm-sunrise w-screen h-dvh overflow-hidden;
