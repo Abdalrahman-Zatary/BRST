@@ -409,6 +409,57 @@
       }
     }
   }
+  /* OriginsHeroSection */
+  .origins-hero-section {
+    @apply bg-near-black w-screen relative h-[200vh] overflow-hidden;
+
+    .origins-image-sticky {
+      @apply absolute top-0 left-0 w-full h-screen;
+
+      .origins-image-bg {
+        @apply size-full object-cover will-change-[filter];
+      }
+    }
+    .origins-content-wrapper {
+      @apply absolute inset-0 z-10 size-full flex flex-col;
+
+      .origins-content-block {
+        @apply relative w-full h-screen overflow-hidden flex justify-center items-center text-center;
+
+        .origins-hero-content {
+          @apply absolute w-full md:top-[45%] top-2/5 md:left-0 left-1/2 md:translate-x-0 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col md:ml-[2vw] ml-0 md:text-start text-center;
+
+          .origins-hero-title {
+            @apply text-warm-sunrise 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[5.3rem] text-[2.75rem] lg:py-0 md:py-5 py-3 font-bold uppercase leading-[9vw] tracking-[-0.35vw];
+          }
+
+          .origins-hero-text-scroll {
+            @apply rotate-3 sm:-mt-3 -mt-1 mb-8 mr-auto md:ml-0 ml-auto;
+
+            .hero-subtitle {
+              @apply bg-golden-mango;
+            }
+
+            h1 {
+              @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[4.3rem] text-[2.75rem] text-warm-sunrise leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
+            }
+          }
+        }
+
+        .origins-hero-sercel-text {
+          @apply absolute md:bottom-14 bottom-1/5 md:right-6 flex justify-center items-center;
+
+          .origins-play-btn {
+            @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:size-[3.5vw] sm:size-[7.5vw] size-[15vw] bg-[#ffffff1a] backdrop-blur-xl rounded-full flex justify-center items-center;
+          }
+        }
+
+        .origins-content-text {
+          @apply w-[73vw] md:text-[4vw] sm:text-4xl text-3xl uppercase font-bold font-sans leading-[105%] tracking-[-0.15vw] text-warm-sunrise;
+        }
+      }
+    }
+  }
   /* Footer */
   .footer {
     @apply min-h-dvh overflow-hidden relative bg-near-black will-change-transform backface-hidden -mt-0.5;
