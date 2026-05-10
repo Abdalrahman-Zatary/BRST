@@ -6,7 +6,7 @@ import {
   Shop,
   Stores,
   About,
-  Academy,
+  Origins,
   Programs,
   Contact,
   ProductDetails,
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="shop" element={<Shop />} />
         <Route path="stores" element={<Stores />} />
         <Route path="about" element={<About />} />
-        <Route path="academy" element={<Academy />} />
+        <Route path="origins" element={<Origins />} />
         <Route path="programs" element={<Programs />} />
         <Route path="contact" element={<Contact />} />
         <Route path="product/:flavor" element={<ProductDetails />} />

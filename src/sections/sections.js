@@ -15,6 +15,7 @@ import ProgramsMessageSection from './programs-message-section/programs-message-
 import ProgramsEthosSection from './programs-ethos-section/programs-ethos-section.component';
 import AboutHeroSection from './about-hero-section/about-hero-section.component';
 import AboutEthosSection from './about-ethos-section/about-ethos-section.component';
+import OriginsHeroSection from './origins-hero-section/origins-hero-section.component';
 
 export {
   HeroSection,
@@ -34,4 +35,5 @@ export {
   ProgramsEthosSection,
   AboutHeroSection,
   AboutEthosSection,
+  OriginsHeroSection,
 };

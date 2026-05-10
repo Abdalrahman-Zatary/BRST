@@ -6,7 +6,7 @@ import About from './about/about.component';
 import Programs from './programs/programs.component';
 import Contact from './contact/contact.component';
 import ProductDetails from './product-details/product-details.component';
-import Academy from './academy/academy.component';
+import Origins from './origins/origins.component';
 
 export {
   Home,
@@ -17,5 +17,5 @@ export {
   Programs,
   Contact,
   ProductDetails,
-  Academy,
+  Origins,
 };

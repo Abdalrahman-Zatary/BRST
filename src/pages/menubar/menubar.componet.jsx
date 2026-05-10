@@ -25,8 +25,8 @@ const MENU_LINKS = [
     imageUrl: "https://i.ibb.co/pBBmFbhW/menubar-4.webp",
   },
   {
-    label: "BRST academy",
-    path: "/academy",
+    label: "BRST Origins",
+    path: "/origins",
     imageUrl: "https://i.ibb.co/KxFPt08L/menubar-3.webp",
   },
   {
