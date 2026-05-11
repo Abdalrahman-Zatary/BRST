@@ -7,10 +7,6 @@ import gsap from 'gsap';
 import { SplitText, ScrollTrigger } from 'gsap/all';
 import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
-// const originals = [
-
-// ]
-
 const OriginsCarouselSection = () => {
   const lenisRef = useRef(null);
   const isMobile = useMediaQuery({ 
