@@ -45,12 +45,7 @@ const OriginsCarouselSection = () => {
     replayTimelineOnEnter(titleCarouselTl, ".origins-carousel-section", {
       start: "top top",
       end: "125% top",
-      // markers: true,
     });
-    // replayTimelineOnEnter(titleCarouselTl, ".first-box", {
-    //   start: "top top",
-    //   markers: true,
-    // });
 
     const lenis = new Lenis();
     lenisRef.current = lenis;
@@ -290,9 +285,9 @@ const OriginsCarouselSection = () => {
           <div className="box-img box-img-1">
             <div className="box-img-wrapper">
               <img
-                className="w-full h-full object-cover"
-                src="/public/1.jpg"
-                alt=""
+                className="w-full h-full object-cover object-top"
+                src="https://i.ibb.co/DDGnvvfQ/person-1.webp"
+                alt="omar-rashed"
               />
             </div>
           </div>
@@ -302,9 +297,9 @@ const OriginsCarouselSection = () => {
           >
             <div className="box-img-wrapper">
               <img
-                className="w-full h-full object-cover scale-125"
-                src="/public/2.jpg"
-                alt=""
+                className="w-full h-full object-cover object-top"
+                src="https://i.ibb.co/svjL56zW/person-2.webp"
+                alt="sana-malik"
               />
             </div>
           </div>
@@ -327,7 +322,7 @@ const OriginsCarouselSection = () => {
                 obsessed with the perfect balance of nutrients and flavor, she's
                 the reason BRST hits different every time. She believes great
                 products aren't created — they're discovered. "The formula is
-                never finished. Neither am I."
+                never finished."
               </p>
             </div>
           </div>
@@ -356,9 +351,9 @@ const OriginsCarouselSection = () => {
           <div className="relative w-full h-full">
             <div className="box-img-wrapper">
               <img
-                className="w-full h-full object-cover"
-                src="/public/3.jpg"
-                alt=""
+                className="w-full h-full object-top object-cover"
+                src="https://i.ibb.co/2143nVF8/person-3.webp"
+                alt="carter"
               />
             </div>
           </div>
