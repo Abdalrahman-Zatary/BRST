@@ -5,7 +5,11 @@ import { useMediaQuery } from 'react-responsive';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { SplitText, ScrollTrigger } from 'gsap/all';
+import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
+// const originals = [
+
+// ]
 
 const OriginsCarouselSection = () => {
   const lenisRef = useRef(null);
@@ -14,6 +18,40 @@ const OriginsCarouselSection = () => {
   });
 
   useGSAP(() => {
+    const titleCarouselSpilt = SplitText.create(".origins-carousel-title", {
+      type: "chars",
+    });
+
+    const titleCarouselTl = gsap.timeline({
+      paused: true,
+    });
+
+    titleCarouselTl
+      .to(".origins-carousel-text-scroll", {
+        duration: 1.2,
+        opacity: 1,
+        clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
+        ease: "circ.out",
+      })
+      .from(
+        titleCarouselSpilt.chars,
+        {
+          yPercent: 200,
+          stagger: 0.02,
+          ease: "power1.out",
+        },
+        "-=0.5",
+      );
+    replayTimelineOnEnter(titleCarouselTl, ".origins-carousel-section", {
+      start: "top top",
+      end: "125% top",
+      // markers: true,
+    });
+    // replayTimelineOnEnter(titleCarouselTl, ".first-box", {
+    //   start: "top top",
+    //   markers: true,
+    // });
+
     const lenis = new Lenis();
     lenisRef.current = lenis;
     lenis.on("scroll", ScrollTrigger.update);
@@ -23,26 +61,24 @@ const OriginsCarouselSection = () => {
     });
     gsap.ticker.lagSmoothing(0);
 
-    gsap.set(".second-box", 
-      isMobile 
-      ? { yPercent: 100 } 
-      : { xPercent: 100 }
-    );
-    gsap.set(".third-box", { 
-      xPercent: 100, 
-      yPercent: 100 
+    gsap.set(".second-box", isMobile ? { yPercent: 100 } : { xPercent: 100 });
+    gsap.set(".third-box", {
+      xPercent: 100,
+      yPercent: 100,
     });
-    gsap.set(".forth-box", { 
-      xPercent: 100, 
-      yPercent: 100 
+    gsap.set(".forth-box", {
+      xPercent: 100,
+      yPercent: 100,
     });
 
     const initTextSplit = () => {
       const textElements = document.querySelectorAll(
         `.third-box .box-content-wrapper h1, 
-        .third-box .box-content-wrapper p, 
-        .third-box .box-content-wrapper-2 h1, 
-        .third-box .box-content-wrapper-2 p`,
+        .third-box .box-content-wrapper h3, 
+        .third-box .box-content-wrapper p,
+        .third-box .second-box-content-wrapper h1,
+        .third-box .second-box-content-wrapper h3, 
+        .third-box .second-box-content-wrapper p`,
       );
 
       textElements.forEach((element) => {
@@ -59,10 +95,10 @@ const OriginsCarouselSection = () => {
     initTextSplit();
 
     gsap.set(".third-box .box-content-wrapper .line span", {
-      yPercent: 0 
+      yPercent: 0,
     });
-    gsap.set(".third-box .box-content-wrapper-2 .line span", { 
-      yPercent: -125 
+    gsap.set(".third-box .second-box-content-wrapper .line span", {
+      yPercent: -125,
     });
 
     let currentPhase = 0;
@@ -79,49 +115,53 @@ const OriginsCarouselSection = () => {
         if (progress >= 0.25 && currentPhase === 0) {
           currentPhase = 1;
 
-          gsap.to(".first-box", { 
-            opacity: 0, 
-            scale: 0.75, 
-            duration: 0.75 
+          gsap.to(".first-box", {
+            opacity: 0,
+            scale: 0.75,
+            duration: 0.75,
           });
-          gsap.to(".second-box",
+          gsap.to(
+            ".second-box",
             isMobile
               ? { yPercent: 0, duration: 0.75 }
               : { xPercent: 0, duration: 0.75 },
           );
-          gsap.to(".third-box",
+          gsap.to(
+            ".third-box",
             isMobile
               ? { xPercent: 0, duration: 0.75 }
               : { yPercent: 0, duration: 0.75 },
           );
-          gsap.to(".box-img-1 img", { 
-            scale: 1.25, 
-            duration: 0.75 
+          gsap.to(".box-img-1 img", {
+            scale: 1.25,
+            duration: 0.75,
           });
           gsap.to(".box-img-2", {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 0.75,
           });
-          gsap.to(".box-img-2 img", { 
-            scale: 1, 
-            duration: 0.75 
+          gsap.to(".box-img-2 img", {
+            scale: 1,
+            duration: 0.75,
           });
         }
 
         if (progress >= 0.5 && currentPhase === 1) {
           currentPhase = 2;
-  
-          gsap.to(".second-box", { 
-            opacity: 0, 
-            scale: 0.75, 
-            duration: 0.75 
+
+          gsap.to(".second-box", {
+            opacity: 0,
+            scale: 0.75,
+            duration: 0.75,
           });
-          gsap.to(".third-box",
+          gsap.to(
+            ".third-box",
             isMobile
               ? { yPercent: 0, xPercent: 0, duration: 0.75 }
               : { xPercent: 0, duration: 0.75 },
           );
-          gsap.to(".forth-box",
+          gsap.to(
+            ".forth-box",
             isMobile
               ? { xPercent: 0, duration: 0.75 }
               : { yPercent: 0, duration: 0.75 },
@@ -130,7 +170,7 @@ const OriginsCarouselSection = () => {
             yPercent: -125,
             duration: 0.75,
           });
-          gsap.to(".third-box .box-content-wrapper-2 .line span", {
+          gsap.to(".third-box .second-box-content-wrapper .line span", {
             yPercent: 0,
             duration: 0.75,
             delay: 0.5,
@@ -140,49 +180,53 @@ const OriginsCarouselSection = () => {
         if (progress < 0.25 && currentPhase >= 1) {
           currentPhase = 0;
 
-          gsap.to(".first-box", { 
-            opacity: 1, 
-            scale: 1, 
-            duration: 0.75 
+          gsap.to(".first-box", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.75,
           });
-          gsap.to(".second-box",
+          gsap.to(
+            ".second-box",
             isMobile
               ? { yPercent: 100, duration: 0.75 }
               : { xPercent: 100, duration: 0.75 },
           );
-          gsap.to(".third-box",
+          gsap.to(
+            ".third-box",
             isMobile
               ? { xPercent: 100, duration: 0.75 }
               : { yPercent: 100, duration: 0.75 },
           );
-          gsap.to(".box-img-1 img", { 
-            scale: 1, 
-            duration: 0.75 
+          gsap.to(".box-img-1 img", {
+            scale: 1,
+            duration: 0.75,
           });
           gsap.to(".box-img-2", {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
             duration: 0.75,
           });
-          gsap.to(".box-img-2 img", { 
-            scale: 1.25, 
-            duration: 0.75 
+          gsap.to(".box-img-2 img", {
+            scale: 1.25,
+            duration: 0.75,
           });
         }
 
         if (progress < 0.5 && currentPhase === 2) {
           currentPhase = 1;
 
-          gsap.to(".second-box", { 
-            opacity: 1, 
-            scale: 1, 
-            duration: 0.75 
+          gsap.to(".second-box", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.75,
           });
-          gsap.to(".third-box",
+          gsap.to(
+            ".third-box",
             isMobile
               ? { yPercent: 100, duration: 0.75 }
               : { xPercent: 100, duration: 0.75 },
           );
-          gsap.to(".forth-box",
+          gsap.to(
+            ".forth-box",
             isMobile
               ? { xPercent: 100, duration: 0.75 }
               : { yPercent: 100, duration: 0.75 },
@@ -192,7 +236,7 @@ const OriginsCarouselSection = () => {
             duration: 0.75,
             delay: 0.5,
           });
-          gsap.to(".third-box .box-content-wrapper-2 .line span", {
+          gsap.to(".third-box .second-box-content-wrapper .line span", {
             yPercent: -125,
             duration: 0.75,
           });
@@ -207,73 +251,113 @@ const OriginsCarouselSection = () => {
   });
 
   return (
-    <section className="origins-carousel-section relative w-screen h-dvh bg-near-black text-warm-sunrise overflow-hidden">
-      <div className="origins-carousel-container w-full h-full">
-        <div className="box first-box absolute sm:w-1/2 w-full sm:h-full h-1/2 will-change-transform">
-          <div className="box-content relative w-full h-full p-2">
-            <div className="box-content-wrapper relative w-full h-full bg-deep-navy rounded-[3rem] overflow-hidden p-10 flex flex-box justify-between">
-              <h1 className="w-3/5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </h1>
-              <p className="w-3/5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                in culpa repellendus, excepturi, molestiae natus.
-              </p>
+    <section className="origins-carousel-section">
+      <div className="w-full h-full">
+        <div className="box first-box">
+          <div className="box-content">
+            <div className="box-content-wrapper">
+              <div className="origins-carousel-first-content">
+                <div className="overflow-hidden">
+                  <h1 className="origins-carousel-title">Founder</h1>
+                </div>
+                <div
+                  style={{
+                    clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+                  }}
+                  className="origins-carousel-text-scroll opacity-0"
+                >
+                  <div className="carousel-subtitle lg:py-0 md:py-3 sm:py-0 py-2">
+                    <h1 className="text-deep-navy!">CEO Engineer</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <h3 className="w-4/5">Omar Rashed</h3>
+                <p className="md:w-4/5 w-full">
+                  Omar built BRST from a single conviction: people deserve
+                  better fuel. With a background in business strategy and a
+                  relentless drive for impact, he turned a kitchen experiment
+                  into a brand with a pulse. He doesn't chase trends — he sets
+                  them.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="box second-box absolute sm:w-1/2 w-full sm:h-full h-1/2 will-change-transform">
-          <div className="box-img box-img-1 w-full h-full p-2 absolute top-0 left-0">
-            <div className="box-img-wrapper relative w-full h-full bg-deep-navy rounded-[3rem] overflow-hidden">
+        <div className="box second-box">
+          <div className="box-img box-img-1">
+            <div className="box-img-wrapper">
               <img
                 className="w-full h-full object-cover"
-                src="/1.webp"
+                src="/public/1.jpg"
                 alt=""
               />
             </div>
           </div>
           <div
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-            className="box-img box-img-2 w-full h-full p-2 absolute top-0 left-0"
+            className="box-img box-img-2"
           >
-            <div className="box-img-wrapper relative w-full h-full bg-deep-navy rounded-[3rem] overflow-hidden">
+            <div className="box-img-wrapper">
               <img
                 className="w-full h-full object-cover scale-125"
-                src="/2.webp"
+                src="/public/2.jpg"
                 alt=""
               />
             </div>
           </div>
         </div>
 
-        <div className="box third-box absolute sm:w-1/2 w-full sm:h-full h-1/2 will-change-transform p-2">
-          <div className="box-content-wrapper relative w-full h-full bg-deep-navy rounded-[3rem] overflow-hidden p-10 flex flex-box justify-between">
-            <h1 className="w-3/5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h1>
-            <p className="w-3/5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum in
-              culpa repellendus.
-            </p>
+        <div className="box third-box">
+          <div className="box-content-wrapper">
+            <div>
+              <h1 className="2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[5.3rem] text-[2.75rem] font-bold uppercase leading-[9vw] tracking-[-0.35vw]">
+                Founder
+              </h1>
+              <div className="w-fit font-bold bg-golden-mango lg:-mt-5 -mt-3">
+                <h1 className="text-deep-navy! z-20">CPO Manager</h1>
+              </div>
+            </div>
+            <div className="w-full">
+              <h3 className="w-4/5">Sana Malik</h3>
+              <p className="md:w-4/5 w-full">
+                Sana is the science behind every sip. A food technology graduate
+                obsessed with the perfect balance of nutrients and flavor, she's
+                the reason BRST hits different every time. She believes great
+                products aren't created — they're discovered. "The formula is
+                never finished. Neither am I."
+              </p>
+            </div>
           </div>
-          <div className="box-content-wrapper-2 absolute inset-2 rounded-[3rem] overflow-hidden p-10 flex flex-box justify-between">
-            <h1 className="w-3/5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h1>
-            <p className="w-3/5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum in
-              culpa repellendus.
-            </p>
+          <div className="second-box-content-wrapper">
+            <div>
+              <h1 className="2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[5.3rem] text-[2.75rem] font-bold uppercase leading-[9vw] tracking-[-0.35vw]">
+                Founder
+              </h1>
+              <div className="w-fit font-bold bg-golden-mango lg:-mt-5 -mt-3">
+                <h1 className="text-deep-navy!">CMO Manager</h1>
+              </div>
+            </div>
+            <div className="w-full">
+              <h3 className="w-4/5">Carter</h3>
+              <p className="md:w-4/5 w-full">
+                Dex doesn't sell products — he sells energy. A brand strategist
+                and creative director who gave BRST its attitude, its look, and
+                its voice. If you felt the brand before you tried the drink,
+                that's Dex. "Brands aren't built in boardrooms. They're built"
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="box forth-box absolute sm:w-1/2 w-full sm:h-full h-1/2 will-change-transform">
-          <div className="box-img relative w-full h-full p-2">
-            <div className="box-img-wrapper relative w-full h-full bg-deep-navy rounded-[3rem] overflow-hidden">
+        <div className="box forth-box">
+          <div className="relative w-full h-full">
+            <div className="box-img-wrapper">
               <img
                 className="w-full h-full object-cover"
-                src="/3.webp"
+                src="/public/3.jpg"
                 alt=""
               />
             </div>

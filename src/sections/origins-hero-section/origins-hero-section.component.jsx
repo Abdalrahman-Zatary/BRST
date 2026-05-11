@@ -32,11 +32,6 @@ const OriginsHeroSection = () => {
     });
 
     titlesTl
-      .to(".origins-hero-content", {
-        opacity: 1,
-        yPercent: -50,
-        ease: "power1.inOut",
-      })
       .to(
         ".origins-hero-text-scroll",
         {
