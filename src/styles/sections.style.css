@@ -287,7 +287,7 @@
   }
   /* StoresFindSection */
   .showcase-section {
-    @apply min-h-dvh relative overflow-hidden bg-near-black -mt-0.5 will-change-transform backface-hidden;
+    @apply relative overflow-hidden -mt-0.5 will-change-transform backface-hidden;
 
     .showcase-container {
       @apply relative mt-6 md:h-full sm:h-125 h-105 overflow-hidden text-center;

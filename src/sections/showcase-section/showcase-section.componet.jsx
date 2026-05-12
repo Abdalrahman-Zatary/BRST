@@ -6,10 +6,13 @@ import { SplitText } from 'gsap/all';
 import { replayTimelineOnEnter } from '../../utils/helpers/gsapReplay';
 
 const ShowcaseSection = ({
+  layout,
   bgImageUrl,
   title,
   subtitleImageUrl,
+  subtitleImageSize,
   description,
+  descriptionLayout,
   buttonText,
   buttonLayout,
   imgdepth,
@@ -50,21 +53,23 @@ const ShowcaseSection = ({
       ease: "power1.inOut",
     });
 
-    contentTl
-      .from(".showcase-content p", {
-        opacity: 0,
-        y: 30,
-        ease: "power1.inOut",
-      })
-      .from(
-        ".btn-showcase",
-        {
+    if (imgdepth) {
+      contentTl
+        .from(".showcase-content p", {
           opacity: 0,
-          y: 40,
-          ease: "power2.inOut",
-        },
-        ">",
-      );
+          y: 30,
+          ease: "power1.inOut",
+        })
+        .from(
+          ".btn-showcase",
+          {
+            opacity: 0,
+            y: 40,
+            ease: "power2.inOut",
+          },
+          ">",
+        );
+    }
 
     replayTimelineOnEnter(titleTl, ".showcase-section", {
       start: "20% center",
@@ -75,7 +80,7 @@ const ShowcaseSection = ({
   });
 
   return (
-    <section className="showcase-section">
+    <section className={`showcase-section ${layout}`}>
       {imgdepth && (
         <img
           src="https://i.ibb.co/cm31PH9/location-dip.webp"
@@ -103,12 +108,12 @@ const ShowcaseSection = ({
               }}
               className="showcase-text-scroll -rotate-4 -mt-1 text-nowrap opacity-0"
             >
-              <div className="w-[28vw] max-w-none">
-                <img src={subtitleImageUrl} alt={title} className="w-full " />
+              <div className={`${subtitleImageSize} max-w-none`}>
+                <img src={subtitleImageUrl} alt={title} className="w-full" />
               </div>
             </div>
           </div>
-          <div className="md:max-w-75 max-w-xs">
+          <div className={`${descriptionLayout}`}>
             <p className="text-xs text-warm-sunrise font-paragraph">
               {description}
             </p>
