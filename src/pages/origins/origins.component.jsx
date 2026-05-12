@@ -1,11 +1,11 @@
 import { OriginsHeroSection, OriginsCarouselSection, FlavorSection } from '../../sections/sections';
 
 const Origins = () => {
-  return(
+  return (
     <>
       <OriginsHeroSection />
       <OriginsCarouselSection />
-      <FlavorSection />
+      <FlavorSection title={"Explore our"} subTitle={"Bursts"} argement={false} />
     </>
   );
 };

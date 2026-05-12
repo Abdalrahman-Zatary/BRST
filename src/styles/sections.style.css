@@ -74,7 +74,7 @@
     @apply relative bg-warm-sunrise;
     
     .flavor-text-scroll {
-      @apply absolute z-10 -rotate-3 xl:text-8xl lg:text-[5.2rem] md:text-[6.7rem] sm:text-8xl text-[3rem] xl:translate-y-3 border-[0.5vw] border-warm-sunrise;
+      @apply z-10 -rotate-3 xl:text-8xl lg:text-[5.2rem] md:text-[6.7rem] sm:text-8xl text-[3rem] xl:translate-y-3 border-[0.5vw] border-warm-sunrise;
     }
 
     .first-text-split h1 {

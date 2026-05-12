@@ -9,12 +9,14 @@ import {
 } from '../../sections/sections';
 
 const Home = () => {
+  const flavorTitle = "We here 6";
+  const flavorSubTitle = "freaking";
 
   return (
     <>
       <HeroSection />
       <MessageSection />
-      <FlavorSection />
+      <FlavorSection title={flavorTitle} subTitle={flavorSubTitle} argement={true} />
       <NutritionSection />
       <div>
         <BenefitSection />
