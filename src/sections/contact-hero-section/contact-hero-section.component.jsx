@@ -1,4 +1,32 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/all';
+
 const ContactHeroSection = () => {
+  useGSAP(() => {
+
+    const tl = gsap.timeline({ delay: 0.5 });
+
+    const splitTitle = SplitText.create(".contact-hero-content h1", {
+      type: "chars",
+    });
+
+    tl.from(splitTitle.chars, {
+      yPercent: 100,
+      opacity: 0,
+      ease: "elastic.out(1, 0.5)",
+      stagger: {
+        each: 0.08,
+        from: "center",
+      },
+    }).from(".contact-hero-content p", {
+      opacity: 0,
+      yPercent: 30,
+      duration: 0.8,
+      ease: "power2.inOut",
+    });
+  });
+
   return (
     <section className="contact-hero-section">
       <img
@@ -14,7 +42,7 @@ const ContactHeroSection = () => {
               <h1 className="ml-[2vw]">in</h1>
             </div>
             <h1 className="xl:-mt-3 mt-0">touch</h1>
-            <p>
+            <p className="opacity-100">
               We love to hear from you. Reach out with comments, questions and
               feedback. Our lovely team will reply as quickly as we can. <br />
               <br />
@@ -28,7 +56,7 @@ const ContactHeroSection = () => {
             </div>
 
             <div className="block mt-[3vw] mb-4">
-              <form className="grid sm:grid-cols-2 grid-cols-1 md:gap-[2vw] gap-4 h-full" action="">
+              <form className="grid sm:grid-cols-2 grid-cols-1 md:gap-[2vw] gap-4 h-full">
                 <input
                   className="child-form"
                   type="text"
