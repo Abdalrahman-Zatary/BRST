@@ -1,15 +1,18 @@
 import {
   StoresHeroSection,
   StoresListPreviewSection,
-  StoresFindSection,
+  ShowcaseSection
 } from '../../sections/sections';
+import { showcaseSectionData } from '../../utils/constants/showcaseSection.Data';
 
 const Stores = () => {
+  const { Promo } = showcaseSectionData;
+
   return (
     <>
       <StoresHeroSection />
       <StoresListPreviewSection />
-      <StoresFindSection />
+      <ShowcaseSection {...Promo} />
     </>
   );
 };

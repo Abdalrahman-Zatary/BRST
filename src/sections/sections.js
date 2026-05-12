@@ -9,7 +9,7 @@ import ShopHeroSection from './shop-hero-section/shop-hero-section.component';
 import FlavorShelfSection from './flavor-grid-section/flavor-grid-section.component';
 import StoresHeroSection from './stores-hero-section/stores-hero-section.component';
 import StoresListPreviewSection from './stores-list-preview-section/stores-list-preview-section.component';
-import StoresFindSection from './stores-find-section/stores-find-section.componet';
+import ShowcaseSection from './showcase-section/showcase-section.componet';
 import ProgramsHeroSection from './programs-hero-section/programs-hero-section.component';
 import ProgramsMessageSection from './programs-message-section/programs-message-section.component';
 import ProgramsEthosSection from './programs-ethos-section/programs-ethos-section.component';
@@ -30,7 +30,7 @@ export {
   FlavorShelfSection,
   StoresHeroSection,
   StoresListPreviewSection,
-  StoresFindSection,
+  ShowcaseSection,
   ProgramsHeroSection,
   ProgramsMessageSection,
   ProgramsEthosSection,
