@@ -1,6 +1,8 @@
+import {  ContactHeroSection } from '../../sections/sections';
+
 const Contact = () => {
   return (
-    <section>Contact</section>
+    <ContactHeroSection />
   );
 };
 
