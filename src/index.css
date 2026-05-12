@@ -43,6 +43,14 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+textarea {
+  resize: none;
+}
 
 @import './styles/sections.style.css';
 @import './styles/utilities.style.css';
