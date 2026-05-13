@@ -18,6 +18,7 @@ import AboutEthosSection from './about-ethos-section/about-ethos-section.compone
 import OriginsHeroSection from './origins-hero-section/origins-hero-section.component';
 import OriginsCarouselSection from './origins-carousel-section/origins-carousel-section.component';
 import ContactHeroSection from './contact-hero-section/contact-hero-section.component';
+import FaqSection from './contact-faq-section/contact-faq-section.component';
 
 export {
   HeroSection,
@@ -40,4 +41,5 @@ export {
   OriginsHeroSection,
   OriginsCarouselSection,
   ContactHeroSection,
+  FaqSection,
 };

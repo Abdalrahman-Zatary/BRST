@@ -1,8 +1,11 @@
-import {  ContactHeroSection } from '../../sections/sections';
+import {  ContactHeroSection, FaqSection } from '../../sections/sections';
 
 const Contact = () => {
   return (
-    <ContactHeroSection />
+    <>
+      <ContactHeroSection />
+      <FaqSection />
+    </>
   );
 };
 
