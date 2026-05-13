@@ -22,7 +22,7 @@ const Origins = () => {
       />
       <ShowcaseSection {...origins} />
       <TestimonialSection withOffset={false} />
-      <div className="bg-near-black">
+      <div className="bg-near-black ">
         <img
           src="https://i.ibb.co/cm31PH9/location-dip.webp"
           alt="dip"
