@@ -522,6 +522,143 @@
       }
     }
   }
+  /* ContactHeroSection */
+  .contact-hero-section {
+    @apply relative bg-orange-800 flex justify-center items-center lg:pt-[7vw] pt-32 lg:pb-[5vw] pb-0 overflow-hidden;
+    
+    .contact-hero-container {
+      @apply lg:px-[2vw] px-0 w-screen;
+
+      .contact-hero-content {
+        @apply lg:justify-self-start justify-self-center self-center lg:text-start text-center;
+
+      h1 {
+          @apply uppercase 2xl:text-[8.5rem] lg:text-[6.5rem] md:text-[7.3rem] sm:text-[6.3rem] text-[4.75rem] text-warm-sunrise lg:leading-[9vw] leading-none tracking-[-0.15vw] font-bold;
+        }
+
+        p {
+          @apply font-paragraph lg:text-sm md:text-lg sm:text-base text-sm text-warm-sunrise leading-[115%] lg:w-[28vw] md:max-w-xl max-w-sm sm:mx-0 mx-3 lg:mt-8 md:mt-12 mt-10;
+        }
+      }
+
+      .contact-hero-form {
+        @apply bg-pale-cream self-center md:p-[3vw] p-4 lg:rounded-[2vw] rounded-t-4xl;
+
+        h3 {
+          @apply text-deep-navy font-sans text-center lg:text-[3vw] md:text-4xl text-3xl font-bold uppercase leading-none tracking-[-0.15vw];
+        }
+
+        .child-form {
+          @apply bg-warm-sunrise/50 focus:bg-warm-sunrise placeholder:text-deep-navy text-deep-navy border-0 rounded-full h-[4vw] lg:py-2 py-8 md:pl-[2vw] pl-6 outline-none lg:text-[1.25vw] md:text-base text-sm font-paragraph leading-[115%];
+        }
+
+        .input-submit {
+          @apply relative bg-mango-burst lg:w-[12.5vw] w-34 lg:h-[3.7vw] h-10 rounded-full mx-[0.5vw] px-4 flex justify-center items-center text-deep-navy uppercase font-extrabold lg:text-[1.05vw] text-sm tracking-[-0.01vw];
+        }
+
+        .grid-area-select {
+          grid-area: span 1 / span 2 / span 1 / span 2;
+        }
+        @media (max-width: 640px) {
+          .grid-area-select {
+            grid-area: span 1 / span 1 / span 1 / span 1;
+          }
+        }
+      }
+    }
+  }
+  /* FaqSection and Components:{ FaqItem, ChevronIcon } */
+  .faq-section {
+    @apply relative bg-warm-sunrise lg:py-[5vw] md:py-20 py-16 lg:px-[2vw] md:px-6 px-4 overflow-hidden;
+
+    .faq-content {
+      @apply relative w-full top-0 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center lg:mb-[5vw] md:mb-12 mb-8;
+
+      .faq-title {
+        @apply text-deep-navy 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] px-1 lg:py-0 md:py-5 sm:py-0 py-3 font-bold uppercase leading-[9vw] tracking-[-0.35vw];
+      }
+
+      .faq-text-scroll {
+        @apply -rotate-3 -mt-2 border-[0.5vw] border-warm-sunrise;
+
+        .faq-subtitle {
+          @apply bg-golden-mango;
+        }
+
+        h1 {
+          @apply uppercase font-bold 2xl:text-[8.5rem] md:text-[6.5rem] sm:text-[3.3rem] text-[2.75rem] text-warm-sunrise leading-[9vw] tracking-[-0.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0;
+        }
+      }
+    }
+
+    .faq-container {
+      @apply max-w-4xl mx-auto;
+    }
+
+    .faq-list {
+      @apply flex flex-col gap-1 divide-y divide-deep-navy;
+    }
+
+    .faq-item {
+      @apply py-1 rounded-2xl transition-colors duration-300;
+
+      &:not(.faq-item--open):hover {
+        @apply bg-sand-gold/25;
+      }
+    }
+
+    .faq-item--open {
+      @apply bg-sand-gold/60;
+
+      .faq-icon {
+        @apply  bg-mango-burst text-deep-navy! border-mango-burst!;
+      }
+
+      .q-text-base {
+        @apply duration-300 transition-colors sm:text-deep-navy! text-mango-burst!;
+      }
+    }
+
+    .faq-question {
+      @apply w-full flex justify-between items-center py-6 lg:px-4 px-3 text-left cursor-pointer gap-6 bg-transparent border-0 outline-none;
+
+      .faq-question-text {
+        @apply relative flex-1 overflow-hidden;
+
+        .q-text-base {
+          @apply font-sans uppercase text-deep-navy lg:text-[2rem] md:text-xl text-lg leading-tight tracking-[-0.01em];
+        }
+
+        .q-text-fill {
+          @apply absolute inset-0 font-sans uppercase text-mango-burst lg:text-[2rem] md:text-xl text-lg leading-tight tracking-[-0.01em] pointer-events-none;
+        }
+      }
+
+      .faq-icon {
+        @apply text-mango-burst shrink-0 w-9 h-9 flex items-center justify-center rounded-full border border-mango-burst/60 transition-all duration-500;
+      }
+    }
+
+    .faq-answer {
+      @apply overflow-hidden;
+
+      p {
+        @apply font-paragraph text-deep-navy/80 lg:text-base text-sm sm:leading-snug leading-tight lg:pb-6 pb-4 max-w-2xl lg:px-4 px-3;
+      }
+    }
+
+    .faq-footer {
+      @apply mt-16 flex flex-col items-center gap-4;
+
+      p {
+        @apply font-paragraph text-deep-navy/60 text-base;
+      }
+
+      .faq-cta {
+        @apply font-sans uppercase text-deep-navy bg-mango-burst px-8 py-3 rounded-full text-sm tracking-wide no-underline;
+      }
+    }
+  }
   /* Footer */
   .footer {
     @apply min-h-dvh overflow-hidden relative bg-near-black will-change-transform backface-hidden -mt-0.5;
